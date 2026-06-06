@@ -1,0 +1,7 @@
+{
+  "name": "nm_js2wasm",
+  "description": "js2wasm Native Messaging host (WASI)",
+  "path": "/ABSOLUTE/PATH/TO/native-messaging-js2wasm/nm_js2wasm.sh",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://<ID>/"]
+}
