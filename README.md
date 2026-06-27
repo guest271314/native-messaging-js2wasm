@@ -16,16 +16,28 @@ bun install --trust https://github.com/loopdive/js2
 bun build ./node_modules/@loopdive/js2/examples/native-messaging/nm_js2wasm.ts --target=node --outfile=nm_js2wasm.js
 ```
 
+```shell
+bun build ./node_modules/@loopdive/js2/examples/native-messaging/nm_wasi.ts --no-bundle --outfile nm_wasi.js
+```
+
 ### Compile JavaScript to WASM GC
 
 ```shell
 bun ./node_modules/@loopdive/js2/src/cli.ts nm_js2wasm.js --wit --target wasi -o .
 ```
 
+```shell
+bun ./node_modules/@loopdive/js2/src/cli.ts nm_wasi.js --wit --target wasi -o .
+```
+
 ### Compile TypeScript to WASM GC
 
 ```shell
 bun ./node_modules/@loopdive/js2/src/cli.ts ./node_modules/@loopdive/js2/examples/native-messaging/nm_js2wasm.ts --wit --target wasi -o .
+```
+
+```shell
+bun ./node_modules/@loopdive/js2/src/cli.ts ./nm_deno.ts --wit --target wasi -o .
 ```
 
 ### Bundle js2wasm
