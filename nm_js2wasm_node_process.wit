@@ -1,0 +1,14 @@
+package js2wasm:nm-js2wasm-node-process;
+
+world module {
+  /// Core import: wasi_snapshot_preview1.fd_write
+  import fd-write: func(fd: s32, iovs: s32, iovs-len: s32, nwritten: s32) -> s32;
+  /// Core import: wasi_snapshot_preview1.fd_read
+  import fd-read: func(fd: s32, iovs: s32, iovs-len: s32, nread: s32) -> s32;
+  /// Core import: wasi_snapshot_preview1.fd_fdstat_set_flags
+  import fd-fdstat-set-flags: func(p0: s32, p1: s32) -> s32;
+  /// Core import: wasi_snapshot_preview1.poll_oneoff
+  import poll-oneoff: func(in: s32, out: s32, nsubscriptions: s32, nevents: s32) -> s32;
+  /// Core import: wasi_snapshot_preview1.clock_time_get
+  import clock-time-get: func(clock-id: s32, precision: s64, time: s32) -> s32;
+}

@@ -13,8 +13,8 @@
   (type $__subview_i8_byte (sub $type0 (struct (field $length (mut i32)) (field $data (ref null 10)) (field $byteOffset i32))))
   (type $__arr_i16_byte (array (mut i16)))
   (type $__subview_i16_byte (sub $type0 (struct (field $length (mut i32)) (field $data (ref null 12)) (field $byteOffset i32))))
-  (type $__arr_i32_byte (array (mut i32)))
-  (type $__subview_i32_byte (sub $type0 (struct (field $length (mut i32)) (field $data (ref null 14)) (field $byteOffset i32))))
+  (type $__arr_i32_elem (array (mut i32)))
+  (type $__subview_i32_elem (sub $type0 (struct (field $length (mut i32)) (field $data (ref null 14)) (field $byteOffset i32))))
   (type $__subview_f64 (sub $type0 (struct (field $length (mut i32)) (field $data (ref null 3)) (field $byteOffset i32))))
   (type $__arr_ref_6 (array (mut (ref null 6))))
   (type $type22 (func (param (ref null 6) (ref null 6)) (result i32)))
@@ -30,49 +30,65 @@
   (type $type35 (func (param i32) (result (ref null 6))))
   (type $readExact_type (func (param f64 f64 f64) (result i32)))
   (type $decodeLength_type (func (param f64) (result externref)))
-  (type $main_type (func))
-  (type $type43 (func (param externref)))
+  (type $runRechunk_type (func))
+  (type $type44 (func (param externref)))
   (type $__box_number_struct (struct (field $value f64)))
   (type $__box_boolean_struct (struct (field $value i32)))
   (type $$BigInt (struct (field $value i64)))
-  (type $type47 (func (param externref) (result i32)))
-  (type $type48 (func (param externref) (result f64)))
-  (type $type49 (func (param externref) (result i64)))
-  (type $type52 (func (param externref) (result externref)))
+  (type $type48 (func (param externref) (result i32)))
+  (type $type49 (func (param externref) (result f64)))
+  (type $type50 (func (param externref) (result i64)))
+  (type $type53 (func (param externref) (result externref)))
   (type $$Error_struct (struct (field $tag i32) (field $message (mut externref)) (field $name externref) (field $stack (mut externref)) (field $userClassId (mut i32)) (field $props (mut externref))))
-  (type $type54 (func (param externref externref) (result i32)))
+  (type $type55 (func (param externref externref) (result i32)))
   (type $$PropEntry (struct (field $key (ref null 6)) (field $value (mut anyref)) (field $flags (mut i32)) (field $seq (mut i32)) (field $get (mut anyref)) (field $set (mut anyref))))
-  (type $$PropMap (array (mut (ref null 55))))
-  (type $$Object (struct (field $proto (mut (ref null 57))) (field $props (mut (ref null 56))) (field $count (mut i32)) (field $tombstones (mut i32)) (field $flags (mut i32)) (field $nextSeq (mut i32))))
+  (type $$PropMap (array (mut (ref null 56))))
+  (type $$Object (struct (field $proto (mut (ref null 58))) (field $props (mut (ref null 57))) (field $count (mut i32)) (field $tombstones (mut i32)) (field $flags (mut i32)) (field $nextSeq (mut i32))))
   (type $$ObjVecArr (array (mut externref)))
-  (type $$ObjVec (struct (field $len (mut i32)) (field $data (mut (ref null 58)))))
+  (type $$ObjVec (struct (field $len (mut i32)) (field $data (mut (ref null 59)))))
   (type $$ProxyTraps (struct (field $get externref) (field $set externref) (field $has externref) (field $apply externref) (field $deleteProperty externref) (field $getOwnPropertyDescriptor externref) (field $getPrototypeOf externref) (field $setPrototypeOf externref) (field $isExtensible externref) (field $preventExtensions externref) (field $ownKeys externref) (field $defineProperty externref)))
-  (type $$Proxy (struct (field $ptag i32) (field $ptarget (mut anyref)) (field $phandler (mut anyref)) (field $ptraps (mut (ref null 60))) (field $revoked (mut i32))))
-  (type $type62 (func (result externref)))
+  (type $$Proxy (struct (field $ptag i32) (field $ptarget (mut anyref)) (field $phandler (mut anyref)) (field $ptraps (mut (ref null 61))) (field $revoked (mut i32))))
+  (type $type63 (func (result externref)))
   (type $$call_accessor_get_type (func (param externref externref) (result externref)))
   (type $$call_accessor_set_type (func (param externref externref externref)))
   (type $AnyValue (struct (field $tag i32) (field $i32val i32) (field $f64val f64) (field $refval eqref) (field $externval externref)))
-  (type $type73 (func (param (ref null 57)) (result (ref null 56))))
-  (type $type78 (func (param externref externref externref) (result externref)))
-  (type $type79 (func (param externref externref externref externref externref) (result externref)))
-  (type $type81 (func (param externref externref externref externref) (result externref)))
+  (type $type74 (func (param (ref null 58)) (result (ref null 57))))
+  (type $type79 (func (param externref externref externref) (result externref)))
+  (type $type80 (func (param externref externref externref externref externref) (result externref)))
+  (type $type82 (func (param externref externref externref externref) (result externref)))
   (import "wasi_snapshot_preview1" "fd_write" (func $fd_write_import (type 9)))
   (import "wasi_snapshot_preview1" "fd_read" (func $fd_read_import (type 9)))
   (global $__wasi_bump_ptr (mut i32) (i32.const 1024))
   (global $__lin_u8_arena_ptr (mut i32) (i32.const 262144))
   (global $__mod_IOV (mut f64) (f64.const 0))
   (global $__mod_RESULT (mut f64) (f64.const 0))
-  (global $__mod_DATA (mut f64) (f64.const 0))
-  (global $__mod_WINDOW (mut f64) (f64.const 0))
+  (global $__mod_HDR (mut f64) (f64.const 0))
+  (global $__mod_ONE (mut f64) (f64.const 0))
+  (global $__mod_CAP (mut f64) (f64.const 0))
+  (global $__mod_MAXRUN (mut f64) (f64.const 0))
+  (global $__mod_INBUF (mut f64) (f64.const 0))
+  (global $__mod_OUTBUF (mut f64) (f64.const 0))
+  (global $__mod_COMMA (mut f64) (f64.const 0))
+  (global $__mod_OPEN_BRACKET (mut f64) (f64.const 0))
+  (global $__mod_CLOSE_BRACKET (mut f64) (f64.const 0))
+  (global $__mod_DQUOTE (mut f64) (f64.const 0))
   (global $__current_this (mut externref) (ref.null extern))
   (global $__tdz_IOV (mut i32) (i32.const 0))
   (global $__tdz_RESULT (mut i32) (i32.const 0))
-  (global $__tdz_DATA (mut i32) (i32.const 0))
-  (global $__tdz_WINDOW (mut i32) (i32.const 0))
-  (global $__undefined (ref null 70) (i32.const 1 i32.const 0 f64.const NaN ref.null -19 ref.null extern struct.new 70))
+  (global $__tdz_HDR (mut i32) (i32.const 0))
+  (global $__tdz_ONE (mut i32) (i32.const 0))
+  (global $__tdz_CAP (mut i32) (i32.const 0))
+  (global $__tdz_MAXRUN (mut i32) (i32.const 0))
+  (global $__tdz_INBUF (mut i32) (i32.const 0))
+  (global $__tdz_OUTBUF (mut i32) (i32.const 0))
+  (global $__tdz_COMMA (mut i32) (i32.const 0))
+  (global $__tdz_OPEN_BRACKET (mut i32) (i32.const 0))
+  (global $__tdz_CLOSE_BRACKET (mut i32) (i32.const 0))
+  (global $__tdz_DQUOTE (mut i32) (i32.const 0))
+  (global $__undefined (ref null 71) (i32.const 1 i32.const 0 f64.const NaN ref.null -19 ref.null extern struct.new 71))
   (global $__init_done (mut i32) (i32.const 0))
   (memory 3)
-  (tag $__exn (type 43))
+  (tag $__exn (type 44))
   (func $__str_copy_tree (param (ref null 6) (ref null 5) i32) (result i32)
     (local $flat (ref null 7))
     (local $flatOff i32)
@@ -5707,7 +5723,7 @@
     drop
   )
   (func $setIovec (param externref f64)
-    global.get 7
+    global.get 15
     i32.eqz
     (if
       (then
@@ -5718,7 +5734,7 @@
     global.get 2
     i32.trunc_sat_f64_s
     local.get 0
-    call 48
+    call 50
     i32.trunc_sat_f64_s
     i32.store offset=0 align=1
     f64.const 4
@@ -5726,7 +5742,7 @@
     local.get 1
     i32.trunc_sat_f64_s
     i32.store offset=0 align=1
-    global.get 8
+    global.get 16
     i32.eqz
     (if
       (then
@@ -5749,9 +5765,9 @@
     local.get 2
     call 39
     local.get 0
-    call 48
+    call 50
     i32.trunc_sat_f64_s
-    global.get 7
+    global.get 15
     i32.eqz
     (if
       (then
@@ -5762,7 +5778,7 @@
     global.get 2
     i32.trunc_sat_f64_s
     i32.const 1
-    global.get 8
+    global.get 16
     i32.eqz
     (if
       (then
@@ -5774,50 +5790,50 @@
     i32.trunc_sat_f64_s
     call 1
     f64.convert_i32_s
-    call 47
+    call 49
     local.tee 3
     f64.const 0
-    call 47
+    call 49
     local.set 4
     local.tee 5
-    call 58
+    call 60
     local.get 4
-    call 58
+    call 60
     i32.and
     (if (result i32)
       (then
       local.get 5
-      call 48
+      call 50
       local.get 4
-      call 48
+      call 50
       f64.eq
       )
       (else
       local.get 5
-      call 59
+      call 61
       local.get 4
-      call 59
+      call 61
       i32.and
       (if (result i32)
         (then
         local.get 5
-        call 51
+        call 53
         local.get 4
-        call 51
+        call 53
         i32.eq
         )
         (else
         local.get 5
-        call 60
+        call 62
         local.get 4
-        call 60
+        call 62
         i32.and
         (if (result i32)
           (then
           local.get 5
-          call 53
+          call 55
           local.get 4
-          call 53
+          call 55
           i64.eq
           )
           (else
@@ -5873,11 +5889,11 @@
     (if
       (then
       f64.const 0
-      call 47
+      call 49
       return
       )
     )
-    global.get 8
+    global.get 16
     i32.eqz
     (if
       (then
@@ -5889,7 +5905,7 @@
     i32.trunc_sat_f64_s
     i32.load offset=0 align=1
     f64.convert_i32_s
-    call 47
+    call 49
     return
   )
   (func $readExact (type 39)
@@ -5907,15 +5923,15 @@
     (block
       (loop
         local.get 3
-        call 47
+        call 49
         local.set 4
         local.get 2
-        call 47
+        call 49
         local.set 5
         local.get 4
-        call 61
+        call 63
         local.get 5
-        call 61
+        call 63
         i32.and
         (if (result i32)
           (then
@@ -5933,10 +5949,10 @@
           )
           (else
           local.get 4
-          call 48
+          call 50
           local.set 6
           local.get 5
-          call 48
+          call 50
           local.set 7
           local.get 6
           local.get 7
@@ -5978,34 +5994,34 @@
         br_if 1
         (block
           local.get 0
-          call 47
+          call 49
           local.get 1
-          call 47
+          call 49
           local.set 4
           local.get 3
-          call 47
+          call 49
           local.set 5
           local.get 4
           ref.null extern
-          call 89
+          call 91
           local.set 10
           local.get 5
           ref.null extern
-          call 89
+          call 91
           local.set 11
           local.get 10
-          call 61
+          call 63
           local.get 11
-          call 61
+          call 63
           i32.or
           (if (result externref)
             (then
             local.get 10
-            call 91
+            call 93
             any.convert_extern
             ref.cast (ref 6)
             local.get 11
-            call 91
+            call 93
             any.convert_extern
             ref.cast (ref 6)
             call 4
@@ -6013,11 +6029,11 @@
             )
             (else
             local.get 10
-            call 48
+            call 50
             local.get 11
-            call 48
+            call 50
             f64.add
-            call 47
+            call 49
             )
           )
           local.get 2
@@ -6025,7 +6041,7 @@
           f64.sub
           call 40
           local.tee 9
-          call 48
+          call 50
           f64.const 0
           f64.le
           (if
@@ -6036,7 +6052,7 @@
           )
           local.get 3
           local.get 9
-          call 48
+          call 50
           f64.add
           local.set 3
         )
@@ -6067,14 +6083,14 @@
           local.get 1
           local.get 3
           f64.add
-          call 47
+          call 49
           local.get 2
           local.get 3
           f64.sub
           call 39
           local.get 0
           i32.trunc_sat_f64_s
-          global.get 7
+          global.get 15
           i32.eqz
           (if
             (then
@@ -6085,7 +6101,7 @@
           global.get 2
           i32.trunc_sat_f64_s
           i32.const 1
-          global.get 8
+          global.get 16
           i32.eqz
           (if
             (then
@@ -6097,50 +6113,50 @@
           i32.trunc_sat_f64_s
           call 0
           f64.convert_i32_s
-          call 47
+          call 49
           local.tee 4
           f64.const 0
-          call 47
+          call 49
           local.set 5
           local.tee 6
-          call 58
+          call 60
           local.get 5
-          call 58
+          call 60
           i32.and
           (if (result i32)
             (then
             local.get 6
-            call 48
+            call 50
             local.get 5
-            call 48
+            call 50
             f64.eq
             )
             (else
             local.get 6
-            call 59
+            call 61
             local.get 5
-            call 59
+            call 61
             i32.and
             (if (result i32)
               (then
               local.get 6
-              call 51
+              call 53
               local.get 5
-              call 51
+              call 53
               i32.eq
               )
               (else
               local.get 6
-              call 60
+              call 62
               local.get 5
-              call 60
+              call 62
               i32.and
               (if (result i32)
                 (then
                 local.get 6
-                call 53
+                call 55
                 local.get 5
-                call 53
+                call 55
                 i64.eq
                 )
                 (else
@@ -6199,7 +6215,7 @@
             return
             )
           )
-          global.get 8
+          global.get 16
           i32.eqz
           (if
             (then
@@ -6211,9 +6227,9 @@
           i32.trunc_sat_f64_s
           i32.load offset=0 align=1
           f64.convert_i32_s
-          call 47
+          call 49
           local.tee 9
-          call 48
+          call 50
           f64.const 0
           f64.le
           (if
@@ -6224,7 +6240,7 @@
           )
           local.get 3
           local.get 9
-          call 48
+          call 50
           f64.add
           local.set 3
         )
@@ -6266,133 +6282,35 @@
     f64.const 16777216
     f64.mul
     f64.add
-    return_call 47
+    return_call 49
   )
-  (func $encodeLength (param f64 f64)
-    (local $__tmp_0 f64)
-    (local $__tmp_1 f64)
-    local.get 0
-    i32.trunc_sat_f64_s
+  (func $emitFrame (param f64 f64 f64 f64)
+    (local $bodyLen externref)
+    (local $k f64)
+    (local $__tmp_2 f64)
+    (local $__tmp_3 f64)
     local.get 1
-    f64.const 255
-    local.set 2
-    f64.trunc
-    local.tee 3
-    local.get 3
-    f64.const 4294967296
-    f64.div
-    f64.floor
-    f64.const 4294967296
-    f64.mul
-    f64.sub
-    i32.trunc_sat_f64_u
-    local.get 2
-    f64.trunc
-    local.tee 2
-    local.get 2
-    f64.const 4294967296
-    f64.div
-    f64.floor
-    f64.const 4294967296
-    f64.mul
-    f64.sub
-    i32.trunc_sat_f64_u
-    i32.and
-    f64.convert_i32_s
-    i32.trunc_sat_f64_s
-    i32.store8 offset=0 align=1
-    local.get 0
-    f64.const 1
-    f64.add
-    i32.trunc_sat_f64_s
-    local.get 1
-    f64.const 8
-    local.set 2
-    f64.trunc
-    local.tee 3
-    local.get 3
-    f64.const 4294967296
-    f64.div
-    f64.floor
-    f64.const 4294967296
-    f64.mul
-    f64.sub
-    i32.trunc_sat_f64_u
-    local.get 2
-    f64.trunc
-    local.tee 2
-    local.get 2
-    f64.const 4294967296
-    f64.div
-    f64.floor
-    f64.const 4294967296
-    f64.mul
-    f64.sub
-    i32.trunc_sat_f64_u
-    i32.shr_s
-    f64.convert_i32_s
-    f64.const 255
-    local.set 2
-    f64.trunc
-    local.tee 3
-    local.get 3
-    f64.const 4294967296
-    f64.div
-    f64.floor
-    f64.const 4294967296
-    f64.mul
-    f64.sub
-    i32.trunc_sat_f64_u
-    local.get 2
-    f64.trunc
-    local.tee 2
-    local.get 2
-    f64.const 4294967296
-    f64.div
-    f64.floor
-    f64.const 4294967296
-    f64.mul
-    f64.sub
-    i32.trunc_sat_f64_u
-    i32.and
-    f64.convert_i32_s
-    i32.trunc_sat_f64_s
-    i32.store8 offset=0 align=1
-    local.get 0
     f64.const 2
     f64.add
+    call 49
+    local.set 4
+    global.get 22
+    i32.eqz
+    (if
+      (then
+      ref.null extern
+      throw 0
+      )
+    )
+    global.get 9
     i32.trunc_sat_f64_s
-    local.get 1
-    f64.const 16
-    local.set 2
-    f64.trunc
-    local.tee 3
-    local.get 3
-    f64.const 4294967296
-    f64.div
-    f64.floor
-    f64.const 4294967296
-    f64.mul
-    f64.sub
-    i32.trunc_sat_f64_u
-    local.get 2
-    f64.trunc
-    local.tee 2
-    local.get 2
-    f64.const 4294967296
-    f64.div
-    f64.floor
-    f64.const 4294967296
-    f64.mul
-    f64.sub
-    i32.trunc_sat_f64_u
-    i32.shr_s
-    f64.convert_i32_s
+    local.get 4
+    call 50
     f64.const 255
-    local.set 2
+    local.set 6
     f64.trunc
-    local.tee 3
-    local.get 3
+    local.tee 7
+    local.get 7
     f64.const 4294967296
     f64.div
     f64.floor
@@ -6400,10 +6318,10 @@
     f64.mul
     f64.sub
     i32.trunc_sat_f64_u
-    local.get 2
+    local.get 6
     f64.trunc
-    local.tee 2
-    local.get 2
+    local.tee 6
+    local.get 6
     f64.const 4294967296
     f64.div
     f64.floor
@@ -6415,80 +6333,362 @@
     f64.convert_i32_s
     i32.trunc_sat_f64_s
     i32.store8 offset=0 align=1
-    local.get 0
-    f64.const 3
+    f64.const 69633
+    i32.trunc_sat_f64_s
+    local.get 4
+    call 50
+    f64.const 8
+    local.set 6
+    f64.trunc
+    local.tee 7
+    local.get 7
+    f64.const 4294967296
+    f64.div
+    f64.floor
+    f64.const 4294967296
+    f64.mul
+    f64.sub
+    i32.trunc_sat_f64_u
+    local.get 6
+    f64.trunc
+    local.tee 6
+    local.get 6
+    f64.const 4294967296
+    f64.div
+    f64.floor
+    f64.const 4294967296
+    f64.mul
+    f64.sub
+    i32.trunc_sat_f64_u
+    i32.shr_s
+    f64.convert_i32_s
+    f64.const 255
+    local.set 6
+    f64.trunc
+    local.tee 7
+    local.get 7
+    f64.const 4294967296
+    f64.div
+    f64.floor
+    f64.const 4294967296
+    f64.mul
+    f64.sub
+    i32.trunc_sat_f64_u
+    local.get 6
+    f64.trunc
+    local.tee 6
+    local.get 6
+    f64.const 4294967296
+    f64.div
+    f64.floor
+    f64.const 4294967296
+    f64.mul
+    f64.sub
+    i32.trunc_sat_f64_u
+    i32.and
+    f64.convert_i32_s
+    i32.trunc_sat_f64_s
+    i32.store8 offset=0 align=1
+    f64.const 69634
+    i32.trunc_sat_f64_s
+    local.get 4
+    call 50
+    f64.const 16
+    local.set 6
+    f64.trunc
+    local.tee 7
+    local.get 7
+    f64.const 4294967296
+    f64.div
+    f64.floor
+    f64.const 4294967296
+    f64.mul
+    f64.sub
+    i32.trunc_sat_f64_u
+    local.get 6
+    f64.trunc
+    local.tee 6
+    local.get 6
+    f64.const 4294967296
+    f64.div
+    f64.floor
+    f64.const 4294967296
+    f64.mul
+    f64.sub
+    i32.trunc_sat_f64_u
+    i32.shr_s
+    f64.convert_i32_s
+    f64.const 255
+    local.set 6
+    f64.trunc
+    local.tee 7
+    local.get 7
+    f64.const 4294967296
+    f64.div
+    f64.floor
+    f64.const 4294967296
+    f64.mul
+    f64.sub
+    i32.trunc_sat_f64_u
+    local.get 6
+    f64.trunc
+    local.tee 6
+    local.get 6
+    f64.const 4294967296
+    f64.div
+    f64.floor
+    f64.const 4294967296
+    f64.mul
+    f64.sub
+    i32.trunc_sat_f64_u
+    i32.and
+    f64.convert_i32_s
+    i32.trunc_sat_f64_s
+    i32.store8 offset=0 align=1
+    f64.const 69635
+    i32.trunc_sat_f64_s
+    local.get 4
+    call 50
+    f64.const 24
+    local.set 6
+    f64.trunc
+    local.tee 7
+    local.get 7
+    f64.const 4294967296
+    f64.div
+    f64.floor
+    f64.const 4294967296
+    f64.mul
+    f64.sub
+    i32.trunc_sat_f64_u
+    local.get 6
+    f64.trunc
+    local.tee 6
+    local.get 6
+    f64.const 4294967296
+    f64.div
+    f64.floor
+    f64.const 4294967296
+    f64.mul
+    f64.sub
+    i32.trunc_sat_f64_u
+    i32.shr_s
+    f64.convert_i32_s
+    f64.const 255
+    local.set 6
+    f64.trunc
+    local.tee 7
+    local.get 7
+    f64.const 4294967296
+    f64.div
+    f64.floor
+    f64.const 4294967296
+    f64.mul
+    f64.sub
+    i32.trunc_sat_f64_u
+    local.get 6
+    f64.trunc
+    local.tee 6
+    local.get 6
+    f64.const 4294967296
+    f64.div
+    f64.floor
+    f64.const 4294967296
+    f64.mul
+    f64.sub
+    i32.trunc_sat_f64_u
+    i32.and
+    f64.convert_i32_s
+    i32.trunc_sat_f64_s
+    i32.store8 offset=0 align=1
+    f64.const 69636
+    i32.trunc_sat_f64_s
+    local.get 2
+    i32.trunc_sat_f64_s
+    i32.store8 offset=0 align=1
+    f64.const 0
+    local.set 5
+    (block
+      (loop
+        local.get 5
+        local.get 1
+        f64.lt
+        i32.eqz
+        br_if 1
+        (block
+          global.get 22
+          i32.eqz
+          (if
+            (then
+            ref.null extern
+            throw 0
+            )
+          )
+          global.get 9
+          f64.const 5
+          f64.add
+          local.get 5
+          f64.add
+          i32.trunc_sat_f64_s
+          global.get 21
+          i32.eqz
+          (if
+            (then
+            ref.null extern
+            throw 0
+            )
+          )
+          global.get 8
+          local.get 0
+          f64.add
+          local.get 5
+          f64.add
+          i32.trunc_sat_f64_s
+          i32.load8_u offset=0 align=1
+          i32.store8 offset=0 align=1
+          local.get 5
+          f64.const 1
+          f64.add
+          local.set 5
+        )
+        br 0
+      )
+    )
+    f64.const 69637
+    local.get 1
     f64.add
     i32.trunc_sat_f64_s
-    local.get 1
-    f64.const 24
-    local.set 2
-    f64.trunc
-    local.tee 3
     local.get 3
-    f64.const 4294967296
-    f64.div
-    f64.floor
-    f64.const 4294967296
-    f64.mul
-    f64.sub
-    i32.trunc_sat_f64_u
-    local.get 2
-    f64.trunc
-    local.tee 2
-    local.get 2
-    f64.const 4294967296
-    f64.div
-    f64.floor
-    f64.const 4294967296
-    f64.mul
-    f64.sub
-    i32.trunc_sat_f64_u
-    i32.shr_s
-    f64.convert_i32_s
-    f64.const 255
-    local.set 2
-    f64.trunc
-    local.tee 3
-    local.get 3
-    f64.const 4294967296
-    f64.div
-    f64.floor
-    f64.const 4294967296
-    f64.mul
-    f64.sub
-    i32.trunc_sat_f64_u
-    local.get 2
-    f64.trunc
-    local.tee 2
-    local.get 2
-    f64.const 4294967296
-    f64.div
-    f64.floor
-    f64.const 4294967296
-    f64.mul
-    f64.sub
-    i32.trunc_sat_f64_u
-    i32.and
-    f64.convert_i32_s
     i32.trunc_sat_f64_s
     i32.store8 offset=0 align=1
+    f64.const 1
+    global.get 22
+    i32.eqz
+    (if
+      (then
+      ref.null extern
+      throw 0
+      )
+    )
+    global.get 9
+    f64.const 4
+    local.get 4
+    call 50
+    f64.add
+    call 42
+    drop
   )
-  (func $main (type 42)
-    (local $bodyBase f64)
-    (local $cap f64)
-    (local $declaredLen externref)
-    (local $__tmp_3 externref)
-    (local $__tmp_4 externref)
-    (local $__tmp_5 anyref)
-    (local $__tmp_6 anyref)
+  (func $streamLargeString (param f64) (result i32)
     (local $remaining externref)
-    (local $truncated i32)
-    (local $run f64)
-    call 150
-    f64.const 68
-    local.set 0
-    f64.const 65532
+    (local $runLen f64)
+    local.get 0
+    call 49
     local.set 1
+    (block
+      (loop
+        local.get 1
+        call 50
+        f64.const 0
+        f64.gt
+        i32.eqz
+        br_if 1
+        (block
+          global.get 20
+          i32.eqz
+          (if
+            (then
+            ref.null extern
+            throw 0
+            )
+          )
+          global.get 7
+          local.set 2
+          local.get 1
+          call 50
+          local.get 2
+          f64.lt
+          (if
+            (then
+            local.get 1
+            call 50
+            local.set 2
+            )
+          )
+          f64.const 0
+          global.get 21
+          i32.eqz
+          (if
+            (then
+            ref.null extern
+            throw 0
+            )
+          )
+          global.get 8
+          local.get 2
+          call 41
+          i32.eqz
+          (if
+            (then
+            i32.const 0
+            return
+            )
+          )
+          f64.const 0
+          local.get 2
+          global.get 26
+          i32.eqz
+          (if
+            (then
+            ref.null extern
+            throw 0
+            )
+          )
+          global.get 13
+          global.get 26
+          i32.eqz
+          (if
+            (then
+            ref.null extern
+            throw 0
+            )
+          )
+          global.get 13
+          call 44
+          local.get 1
+          call 50
+          local.get 2
+          f64.sub
+          call 49
+          local.set 1
+        )
+        br 0
+      )
+    )
+    i32.const 1
+    return
+  )
+  (func $runRechunk (type 43)
+    (local $declaredLen externref)
+    (local $__tmp_1 externref)
+    (local $__tmp_2 externref)
+    (local $__tmp_3 anyref)
+    (local $__tmp_4 anyref)
+    (local $__tmp_5 f64)
+    (local $__tmp_6 f64)
+    (local $first externref)
+    (local $interiorRemaining f64)
+    (local $fill f64)
+    (local $truncated i32)
+    (local $need f64)
+    (local $last f64)
+    (local $__tmp_13 i32)
+    (local $runLen f64)
+    (local $consumed f64)
+    (local $rem f64)
+    (local $m f64)
+    (local $startPos f64)
+    (local $stop f64)
+    (local $c f64)
     (block
       (loop
         i32.const 1
@@ -6496,7 +6696,7 @@
         br_if 1
         (block
           f64.const 0
-          global.get 9
+          global.get 17
           i32.eqz
           (if
             (then
@@ -6510,10 +6710,10 @@
           i32.eqz
           (if
             (then
-            br 3
+            return
             )
           )
-          global.get 9
+          global.get 17
           i32.eqz
           (if
             (then
@@ -6523,85 +6723,85 @@
           )
           global.get 4
           call 43
-          local.tee 2
+          local.tee 0
           f64.const 0
-          call 47
-          local.set 3
-          local.tee 4
-          call 58
-          local.get 3
-          call 58
+          call 49
+          local.set 1
+          local.tee 2
+          call 60
+          local.get 1
+          call 60
           i32.and
           (if (result i32)
             (then
-            local.get 4
-            call 48
-            local.get 3
-            call 48
+            local.get 2
+            call 50
+            local.get 1
+            call 50
             f64.eq
             )
             (else
-            local.get 4
-            call 59
-            local.get 3
-            call 59
+            local.get 2
+            call 61
+            local.get 1
+            call 61
             i32.and
             (if (result i32)
               (then
-              local.get 4
-              call 51
-              local.get 3
-              call 51
+              local.get 2
+              call 53
+              local.get 1
+              call 53
               i32.eq
               )
               (else
-              local.get 4
-              call 60
-              local.get 3
-              call 60
+              local.get 2
+              call 62
+              local.get 1
+              call 62
               i32.and
               (if (result i32)
                 (then
-                local.get 4
-                call 53
-                local.get 3
-                call 53
+                local.get 2
+                call 55
+                local.get 1
+                call 55
                 i64.eq
                 )
                 (else
-                local.get 4
+                local.get 2
                 any.convert_extern
-                local.get 3
+                local.get 1
                 any.convert_extern
-                local.set 6
-                local.tee 5
+                local.set 4
+                local.tee 3
                 ref.test (ref 6)
-                local.get 6
+                local.get 4
                 ref.test (ref 6)
                 i32.and
                 (if (result i32)
                   (then
-                  local.get 5
+                  local.get 3
                   ref.cast (ref 6)
                   call 3
                   ref.cast null (ref null 6)
-                  local.get 6
+                  local.get 4
                   ref.cast (ref 6)
                   ref.cast null (ref null 6)
                   call 3
                   call 6
                   )
                   (else
-                  local.get 5
+                  local.get 3
                   ref.test (ref -19)
-                  local.get 6
+                  local.get 4
                   ref.test (ref -19)
                   i32.and
                   (if (result i32)
                     (then
-                    local.get 5
+                    local.get 3
                     ref.cast (ref -19)
-                    local.get 6
+                    local.get 4
                     ref.cast (ref -19)
                     ref.eq
                     )
@@ -6619,10 +6819,12 @@
           )
           (if
             (then
-            br 3
+            return
             )
           )
-          global.get 9
+          local.get 0
+          call 50
+          global.get 19
           i32.eqz
           (if
             (then
@@ -6630,12 +6832,271 @@
             throw 0
             )
           )
-          global.get 4
-          local.get 2
-          call 48
-          call 44
+          global.get 6
+          f64.le
+          (if
+            (then
+            global.get 22
+            i32.eqz
+            (if
+              (then
+              ref.null extern
+              throw 0
+              )
+            )
+            global.get 9
+            i32.trunc_sat_f64_s
+            local.get 0
+            call 50
+            f64.const 255
+            local.set 5
+            f64.trunc
+            local.tee 6
+            local.get 6
+            f64.const 4294967296
+            f64.div
+            f64.floor
+            f64.const 4294967296
+            f64.mul
+            f64.sub
+            i32.trunc_sat_f64_u
+            local.get 5
+            f64.trunc
+            local.tee 5
+            local.get 5
+            f64.const 4294967296
+            f64.div
+            f64.floor
+            f64.const 4294967296
+            f64.mul
+            f64.sub
+            i32.trunc_sat_f64_u
+            i32.and
+            f64.convert_i32_s
+            i32.trunc_sat_f64_s
+            i32.store8 offset=0 align=1
+            f64.const 69633
+            i32.trunc_sat_f64_s
+            local.get 0
+            call 50
+            f64.const 8
+            local.set 5
+            f64.trunc
+            local.tee 6
+            local.get 6
+            f64.const 4294967296
+            f64.div
+            f64.floor
+            f64.const 4294967296
+            f64.mul
+            f64.sub
+            i32.trunc_sat_f64_u
+            local.get 5
+            f64.trunc
+            local.tee 5
+            local.get 5
+            f64.const 4294967296
+            f64.div
+            f64.floor
+            f64.const 4294967296
+            f64.mul
+            f64.sub
+            i32.trunc_sat_f64_u
+            i32.shr_s
+            f64.convert_i32_s
+            f64.const 255
+            local.set 5
+            f64.trunc
+            local.tee 6
+            local.get 6
+            f64.const 4294967296
+            f64.div
+            f64.floor
+            f64.const 4294967296
+            f64.mul
+            f64.sub
+            i32.trunc_sat_f64_u
+            local.get 5
+            f64.trunc
+            local.tee 5
+            local.get 5
+            f64.const 4294967296
+            f64.div
+            f64.floor
+            f64.const 4294967296
+            f64.mul
+            f64.sub
+            i32.trunc_sat_f64_u
+            i32.and
+            f64.convert_i32_s
+            i32.trunc_sat_f64_s
+            i32.store8 offset=0 align=1
+            f64.const 69634
+            i32.trunc_sat_f64_s
+            local.get 0
+            call 50
+            f64.const 16
+            local.set 5
+            f64.trunc
+            local.tee 6
+            local.get 6
+            f64.const 4294967296
+            f64.div
+            f64.floor
+            f64.const 4294967296
+            f64.mul
+            f64.sub
+            i32.trunc_sat_f64_u
+            local.get 5
+            f64.trunc
+            local.tee 5
+            local.get 5
+            f64.const 4294967296
+            f64.div
+            f64.floor
+            f64.const 4294967296
+            f64.mul
+            f64.sub
+            i32.trunc_sat_f64_u
+            i32.shr_s
+            f64.convert_i32_s
+            f64.const 255
+            local.set 5
+            f64.trunc
+            local.tee 6
+            local.get 6
+            f64.const 4294967296
+            f64.div
+            f64.floor
+            f64.const 4294967296
+            f64.mul
+            f64.sub
+            i32.trunc_sat_f64_u
+            local.get 5
+            f64.trunc
+            local.tee 5
+            local.get 5
+            f64.const 4294967296
+            f64.div
+            f64.floor
+            f64.const 4294967296
+            f64.mul
+            f64.sub
+            i32.trunc_sat_f64_u
+            i32.and
+            f64.convert_i32_s
+            i32.trunc_sat_f64_s
+            i32.store8 offset=0 align=1
+            f64.const 69635
+            i32.trunc_sat_f64_s
+            local.get 0
+            call 50
+            f64.const 24
+            local.set 5
+            f64.trunc
+            local.tee 6
+            local.get 6
+            f64.const 4294967296
+            f64.div
+            f64.floor
+            f64.const 4294967296
+            f64.mul
+            f64.sub
+            i32.trunc_sat_f64_u
+            local.get 5
+            f64.trunc
+            local.tee 5
+            local.get 5
+            f64.const 4294967296
+            f64.div
+            f64.floor
+            f64.const 4294967296
+            f64.mul
+            f64.sub
+            i32.trunc_sat_f64_u
+            i32.shr_s
+            f64.convert_i32_s
+            f64.const 255
+            local.set 5
+            f64.trunc
+            local.tee 6
+            local.get 6
+            f64.const 4294967296
+            f64.div
+            f64.floor
+            f64.const 4294967296
+            f64.mul
+            f64.sub
+            i32.trunc_sat_f64_u
+            local.get 5
+            f64.trunc
+            local.tee 5
+            local.get 5
+            f64.const 4294967296
+            f64.div
+            f64.floor
+            f64.const 4294967296
+            f64.mul
+            f64.sub
+            i32.trunc_sat_f64_u
+            i32.and
+            f64.convert_i32_s
+            i32.trunc_sat_f64_s
+            i32.store8 offset=0 align=1
+            f64.const 0
+            f64.const 69636
+            local.get 0
+            call 50
+            call 41
+            i32.eqz
+            (if
+              (then
+              return
+              )
+            )
+            f64.const 1
+            global.get 22
+            i32.eqz
+            (if
+              (then
+              ref.null extern
+              throw 0
+              )
+            )
+            global.get 9
+            f64.const 4
+            local.get 0
+            call 50
+            f64.add
+            call 42
+            i32.eqz
+            (if
+              (then
+              return
+              )
+            )
+            br 1
+            )
+          )
+          f64.const 0
+          global.get 18
+          i32.eqz
+          (if
+            (then
+            ref.null extern
+            throw 0
+            )
+          )
+          global.get 5
           f64.const 1
-          global.get 9
+          call 41
+          i32.eqz
+          (if
+            (then
+            return
+            )
+          )
+          global.get 18
           i32.eqz
           (if
             (then
@@ -6643,79 +7104,622 @@
             throw 0
             )
           )
-          global.get 4
-          f64.const 4
-          call 42
+          global.get 5
+          i32.trunc_sat_f64_s
+          i32.load8_u offset=0 align=1
+          f64.convert_i32_s
+          call 49
+          local.tee 7
+          global.get 26
           i32.eqz
           (if
             (then
-            br 3
+            ref.null extern
+            throw 0
             )
           )
+          global.get 13
+          call 49
+          local.set 2
+          local.tee 1
+          call 60
           local.get 2
-          local.set 7
-          i32.const 0
+          call 60
+          i32.and
+          (if (result i32)
+            (then
+            local.get 1
+            call 50
+            local.get 2
+            call 50
+            f64.eq
+            )
+            (else
+            local.get 1
+            call 61
+            local.get 2
+            call 61
+            i32.and
+            (if (result i32)
+              (then
+              local.get 1
+              call 53
+              local.get 2
+              call 53
+              i32.eq
+              )
+              (else
+              local.get 1
+              call 62
+              local.get 2
+              call 62
+              i32.and
+              (if (result i32)
+                (then
+                local.get 1
+                call 55
+                local.get 2
+                call 55
+                i64.eq
+                )
+                (else
+                local.get 1
+                any.convert_extern
+                local.get 2
+                any.convert_extern
+                local.set 3
+                local.tee 4
+                ref.test (ref 6)
+                local.get 3
+                ref.test (ref 6)
+                i32.and
+                (if (result i32)
+                  (then
+                  local.get 4
+                  ref.cast (ref 6)
+                  call 3
+                  ref.cast null (ref null 6)
+                  local.get 3
+                  ref.cast (ref 6)
+                  ref.cast null (ref null 6)
+                  call 3
+                  call 6
+                  )
+                  (else
+                  local.get 4
+                  ref.test (ref -19)
+                  local.get 3
+                  ref.test (ref -19)
+                  i32.and
+                  (if (result i32)
+                    (then
+                    local.get 4
+                    ref.cast (ref -19)
+                    local.get 3
+                    ref.cast (ref -19)
+                    ref.eq
+                    )
+                    (else
+                    i32.const 0
+                    )
+                  )
+                  )
+                )
+                )
+              )
+              )
+            )
+            )
+          )
+          (if
+            (then
+            local.get 0
+            call 50
+            f64.const 2
+            f64.sub
+            call 45
+            i32.eqz
+            (if
+              (then
+              return
+              )
+            )
+            f64.const 0
+            global.get 18
+            i32.eqz
+            (if
+              (then
+              ref.null extern
+              throw 0
+              )
+            )
+            global.get 5
+            f64.const 1
+            call 41
+            i32.eqz
+            (if
+              (then
+              return
+              )
+            )
+            br 1
+            )
+          )
+          local.get 0
+          call 50
+          f64.const 2
+          f64.sub
           local.set 8
+          f64.const 0
+          local.set 9
+          i32.const 0
+          local.set 10
           (block
             (loop
-              local.get 7
-              call 48
+              local.get 8
               f64.const 0
               f64.gt
               i32.eqz
               br_if 1
               (block
-                local.get 1
-                local.set 9
-                local.get 7
-                call 48
-                local.get 9
-                f64.lt
+                global.get 19
+                i32.eqz
                 (if
                   (then
-                  local.get 7
-                  call 48
+                  ref.null extern
+                  throw 0
+                  )
+                )
+                global.get 6
+                local.get 9
+                f64.sub
+                local.set 11
+                local.get 8
+                local.get 11
+                f64.ge
+                (if
+                  (then
+                  f64.const 0
+                  global.get 21
+                  i32.eqz
+                  (if
+                    (then
+                    ref.null extern
+                    throw 0
+                    )
+                  )
+                  global.get 8
+                  local.get 9
+                  f64.add
+                  local.get 11
+                  call 41
+                  i32.eqz
+                  (if
+                    (then
+                    i32.const 1
+                    local.set 10
+                    br 4
+                    )
+                  )
+                  global.get 19
+                  i32.eqz
+                  (if
+                    (then
+                    ref.null extern
+                    throw 0
+                    )
+                  )
+                  global.get 6
+                  local.set 9
+                  local.get 8
+                  local.get 11
+                  f64.sub
+                  local.set 8
+                  global.get 20
+                  i32.eqz
+                  (if
+                    (then
+                    ref.null extern
+                    throw 0
+                    )
+                  )
+                  global.get 7
+                  local.set 12
+                  (block
+                    (loop
+                      local.get 12
+                      f64.const 0
+                      f64.gt
+                      local.tee 13
+                      (if (result i32)
+                        (then
+                        global.get 21
+                        i32.eqz
+                        (if
+                          (then
+                          ref.null extern
+                          throw 0
+                          )
+                        )
+                        global.get 8
+                        local.get 12
+                        f64.add
+                        f64.const 1
+                        f64.sub
+                        i32.trunc_sat_f64_s
+                        i32.load8_u offset=0 align=1
+                        global.get 23
+                        i32.eqz
+                        (if
+                          (then
+                          ref.null extern
+                          throw 0
+                          )
+                        )
+                        global.get 10
+                        local.set 5
+                        f64.convert_i32_s
+                        local.get 5
+                        f64.ne
+                        )
+                        (else
+                        local.get 13
+                        )
+                      )
+                      i32.eqz
+                      br_if 1
+                      (block
+                        local.get 12
+                        f64.const 1
+                        f64.sub
+                        local.set 12
+                      )
+                      br 0
+                    )
+                  )
+                  f64.const 0
+                  local.set 14
+                  f64.const 0
+                  local.set 15
+                  local.get 12
+                  f64.const 0
+                  f64.eq
+                  (if
+                    (then
+                    global.get 20
+                    i32.eqz
+                    (if
+                      (then
+                      ref.null extern
+                      throw 0
+                      )
+                    )
+                    global.get 7
+                    local.set 14
+                    global.get 20
+                    i32.eqz
+                    (if
+                      (then
+                      ref.null extern
+                      throw 0
+                      )
+                    )
+                    global.get 7
+                    local.set 15
+                    )
+                    (else
+                    local.get 12
+                    f64.const 1
+                    f64.sub
+                    local.set 14
+                    local.get 12
+                    local.set 15
+                    )
+                  )
+                  f64.const 0
+                  local.get 14
+                  global.get 24
+                  i32.eqz
+                  (if
+                    (then
+                    ref.null extern
+                    throw 0
+                    )
+                  )
+                  global.get 11
+                  global.get 25
+                  i32.eqz
+                  (if
+                    (then
+                    ref.null extern
+                    throw 0
+                    )
+                  )
+                  global.get 12
+                  call 44
+                  local.get 9
+                  local.get 15
+                  f64.sub
+                  local.set 16
+                  f64.const 0
+                  local.set 17
+                  (block
+                    (loop
+                      local.get 17
+                      local.get 16
+                      f64.lt
+                      i32.eqz
+                      br_if 1
+                      (block
+                        global.get 21
+                        i32.eqz
+                        (if
+                          (then
+                          ref.null extern
+                          throw 0
+                          )
+                        )
+                        global.get 8
+                        local.get 17
+                        f64.add
+                        i32.trunc_sat_f64_s
+                        global.get 21
+                        i32.eqz
+                        (if
+                          (then
+                          ref.null extern
+                          throw 0
+                          )
+                        )
+                        global.get 8
+                        local.get 15
+                        f64.add
+                        local.get 17
+                        f64.add
+                        i32.trunc_sat_f64_s
+                        i32.load8_u offset=0 align=1
+                        i32.store8 offset=0 align=1
+                        local.get 17
+                        f64.const 1
+                        f64.add
+                        local.set 17
+                      )
+                      br 0
+                    )
+                  )
+                  local.get 16
+                  local.set 9
+                  )
+                  (else
+                  f64.const 0
+                  global.get 21
+                  i32.eqz
+                  (if
+                    (then
+                    ref.null extern
+                    throw 0
+                    )
+                  )
+                  global.get 8
+                  local.get 9
+                  f64.add
+                  local.get 8
+                  call 41
+                  i32.eqz
+                  (if
+                    (then
+                    i32.const 1
+                    local.set 10
+                    br 4
+                    )
+                  )
+                  local.get 9
+                  local.get 8
+                  f64.add
+                  local.set 9
+                  f64.const 0
+                  local.set 8
+                  f64.const 0
+                  local.set 18
+                  (block
+                    (loop
+                      local.get 18
+                      local.get 9
+                      f64.lt
+                      i32.eqz
+                      br_if 1
+                      (block
+                        local.get 18
+                        global.get 20
+                        i32.eqz
+                        (if
+                          (then
+                          ref.null extern
+                          throw 0
+                          )
+                        )
+                        global.get 7
+                        f64.add
+                        local.tee 19
+                        local.get 9
+                        f64.ge
+                        (if
+                          (then
+                          local.get 9
+                          local.set 19
+                          )
+                          (else
+                          local.get 19
+                          local.set 20
+                          (block
+                            (loop
+                              local.get 20
+                              local.get 18
+                              f64.gt
+                              local.tee 13
+                              (if (result i32)
+                                (then
+                                global.get 21
+                                i32.eqz
+                                (if
+                                  (then
+                                  ref.null extern
+                                  throw 0
+                                  )
+                                )
+                                global.get 8
+                                local.get 20
+                                f64.add
+                                f64.const 1
+                                f64.sub
+                                i32.trunc_sat_f64_s
+                                i32.load8_u offset=0 align=1
+                                global.get 23
+                                i32.eqz
+                                (if
+                                  (then
+                                  ref.null extern
+                                  throw 0
+                                  )
+                                )
+                                global.get 10
+                                local.set 5
+                                f64.convert_i32_s
+                                local.get 5
+                                f64.ne
+                                )
+                                (else
+                                local.get 13
+                                )
+                              )
+                              i32.eqz
+                              br_if 1
+                              (block
+                                local.get 20
+                                f64.const 1
+                                f64.sub
+                                local.set 20
+                              )
+                              br 0
+                            )
+                          )
+                          local.get 20
+                          local.get 18
+                          f64.gt
+                          (if
+                            (then
+                            local.get 20
+                            f64.const 1
+                            f64.sub
+                            local.set 19
+                            )
+                          )
+                          )
+                        )
+                        local.get 18
+                        local.get 19
+                        local.get 18
+                        f64.sub
+                        global.get 24
+                        i32.eqz
+                        (if
+                          (then
+                          ref.null extern
+                          throw 0
+                          )
+                        )
+                        global.get 11
+                        global.get 25
+                        i32.eqz
+                        (if
+                          (then
+                          ref.null extern
+                          throw 0
+                          )
+                        )
+                        global.get 12
+                        call 44
+                        local.get 19
+                        local.set 18
+                        local.get 18
+                        local.get 9
+                        f64.lt
+                        local.tee 13
+                        (if (result i32)
+                          (then
+                          global.get 21
+                          i32.eqz
+                          (if
+                            (then
+                            ref.null extern
+                            throw 0
+                            )
+                          )
+                          global.get 8
+                          local.get 18
+                          f64.add
+                          i32.trunc_sat_f64_s
+                          i32.load8_u offset=0 align=1
+                          global.get 23
+                          i32.eqz
+                          (if
+                            (then
+                            ref.null extern
+                            throw 0
+                            )
+                          )
+                          global.get 10
+                          local.set 5
+                          f64.convert_i32_s
+                          local.get 5
+                          f64.eq
+                          )
+                          (else
+                          local.get 13
+                          )
+                        )
+                        (if
+                          (then
+                          local.get 18
+                          f64.const 1
+                          f64.add
+                          local.set 18
+                          )
+                        )
+                      )
+                      br 0
+                    )
+                  )
+                  f64.const 0
                   local.set 9
                   )
                 )
-                f64.const 0
-                local.get 0
-                local.get 9
-                call 41
-                i32.eqz
-                (if
-                  (then
-                  i32.const 1
-                  local.set 8
-                  br 3
-                  )
-                )
-                f64.const 1
-                local.get 0
-                local.get 9
-                call 42
-                i32.eqz
-                (if
-                  (then
-                  i32.const 1
-                  local.set 8
-                  br 3
-                  )
-                )
-                local.get 7
-                call 48
-                local.get 9
-                f64.sub
-                call 47
-                local.set 7
               )
               br 0
             )
           )
-          local.get 8
+          local.get 10
           (if
             (then
-            br 3
+            return
+            )
+          )
+          f64.const 0
+          global.get 18
+          i32.eqz
+          (if
+            (then
+            ref.null extern
+            throw 0
+            )
+          )
+          global.get 5
+          f64.const 1
+          call 41
+          i32.eqz
+          (if
+            (then
+            return
             )
           )
         )
@@ -6723,7 +7727,11 @@
       )
     )
   )
-  (func $__str_to_number (type 48)
+  (func $main (type 43)
+    call 152
+    call 46
+  )
+  (func $__str_to_number (type 49)
     (local $flat (ref null 7))
     (local $data (ref null 5))
     (local $end i32)
@@ -7778,10 +8786,10 @@
   )
   (func $__box_number (type 40)
     local.get 0
-    struct.new 44
+    struct.new 45
     extern.convert_any
   )
-  (func $__unbox_number (type 48)
+  (func $__unbox_number (type 49)
     (local $$any_temp anyref)
     local.get 0
     ref.is_null
@@ -7794,22 +8802,22 @@
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 44)
-    (if
-      (then
-      local.get 1
-      ref.cast (ref 44)
-      struct.get 44 0
-      return
-      )
-    )
-    local.get 1
     ref.test (ref 45)
     (if
       (then
       local.get 1
       ref.cast (ref 45)
       struct.get 45 0
+      return
+      )
+    )
+    local.get 1
+    ref.test (ref 46)
+    (if
+      (then
+      local.get 1
+      ref.cast (ref 46)
+      struct.get 46 0
       f64.convert_i32_s
       return
       )
@@ -7819,7 +8827,7 @@
     (if
       (then
       local.get 0
-      call 46
+      call 48
       return
       )
     )
@@ -7827,15 +8835,15 @@
   )
   (func $__box_boolean (param i32) (result externref)
     local.get 0
-    struct.new 45
+    struct.new 46
     extern.convert_any
   )
   (func $__box_bigint (param i64) (result externref)
     local.get 0
-    struct.new 46
+    struct.new 47
     extern.convert_any
   )
-  (func $__unbox_boolean (type 47)
+  (func $__unbox_boolean (type 48)
     (local $$any_temp anyref)
     local.get 0
     ref.is_null
@@ -7848,18 +8856,18 @@
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 45)
+    ref.test (ref 46)
     (if
       (then
       local.get 1
-      ref.cast (ref 45)
-      struct.get 45 0
+      ref.cast (ref 46)
+      struct.get 46 0
       return
       )
     )
     i32.const 0
   )
-  (func $__new_TypeError (type 52)
+  (func $__new_TypeError (type 53)
     i32.const -11
     local.get 0
     i32.const 9
@@ -7879,10 +8887,10 @@
     ref.null extern
     i32.const -1
     ref.null extern
-    struct.new 53
+    struct.new 54
     extern.convert_any
   )
-  (func $__to_bigint (type 49)
+  (func $__to_bigint (type 50)
     (local $$any_temp anyref)
     local.get 0
     ref.is_null
@@ -7937,29 +8945,29 @@
       array.new_fixed 5 44
       struct.new 7
       extern.convert_any
-      call 52
+      call 54
       throw 0
       )
     )
     local.get 0
     any.convert_extern
     local.tee 1
+    ref.test (ref 47)
+    (if
+      (then
+      local.get 1
+      ref.cast (ref 47)
+      struct.get 47 0
+      return
+      )
+    )
+    local.get 1
     ref.test (ref 46)
     (if
       (then
       local.get 1
       ref.cast (ref 46)
       struct.get 46 0
-      return
-      )
-    )
-    local.get 1
-    ref.test (ref 45)
-    (if
-      (then
-      local.get 1
-      ref.cast (ref 45)
-      struct.get 45 0
       i64.extend_i32_u
       return
       )
@@ -8001,10 +9009,10 @@
     array.new_fixed 5 32
     struct.new 7
     extern.convert_any
-    call 52
+    call 54
     throw 0
   )
-  (func $__new_RangeError (type 52)
+  (func $__new_RangeError (type 53)
     i32.const -12
     local.get 0
     i32.const 10
@@ -8025,10 +9033,10 @@
     ref.null extern
     i32.const -1
     ref.null extern
-    struct.new 53
+    struct.new 54
     extern.convert_any
   )
-  (func $__new_SyntaxError (type 52)
+  (func $__new_SyntaxError (type 53)
     i32.const -13
     local.get 0
     i32.const 11
@@ -8050,10 +9058,10 @@
     ref.null extern
     i32.const -1
     ref.null extern
-    struct.new 53
+    struct.new 54
     extern.convert_any
   )
-  (func $__bigint_ctor (type 49)
+  (func $__bigint_ctor (type 50)
     (local $$any_temp anyref)
     (local $$num_temp f64)
     local.get 0
@@ -8109,19 +9117,30 @@
       array.new_fixed 5 44
       struct.new 7
       extern.convert_any
-      call 52
+      call 54
       throw 0
       )
     )
     local.get 0
     any.convert_extern
     local.tee 1
+    ref.test (ref 47)
+    (if
+      (then
+      local.get 1
+      ref.cast (ref 47)
+      struct.get 47 0
+      return
+      )
+    )
+    local.get 1
     ref.test (ref 46)
     (if
       (then
       local.get 1
       ref.cast (ref 46)
       struct.get 46 0
+      i64.extend_i32_u
       return
       )
     )
@@ -8132,17 +9151,6 @@
       local.get 1
       ref.cast (ref 45)
       struct.get 45 0
-      i64.extend_i32_u
-      return
-      )
-    )
-    local.get 1
-    ref.test (ref 44)
-    (if
-      (then
-      local.get 1
-      ref.cast (ref 44)
-      struct.get 44 0
       local.tee 2
       local.get 2
       f64.ne
@@ -8237,7 +9245,7 @@
         array.new_fixed 5 71
         struct.new 7
         extern.convert_any
-        call 54
+        call 56
         throw 0
         )
       )
@@ -8303,10 +9311,10 @@
     array.new_fixed 5 52
     struct.new 7
     extern.convert_any
-    call 55
+    call 57
     throw 0
   )
-  (func $__is_truthy (type 47)
+  (func $__is_truthy (type 48)
     (local $$any_temp anyref)
     (local $$f64_temp f64)
     local.get 0
@@ -8320,12 +9328,12 @@
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 44)
+    ref.test (ref 45)
     (if
       (then
       local.get 1
-      ref.cast (ref 44)
-      struct.get 44 0
+      ref.cast (ref 45)
+      struct.get 45 0
       local.tee 2
       f64.const 0
       f64.ne
@@ -8337,22 +9345,22 @@
       )
     )
     local.get 1
-    ref.test (ref 45)
-    (if
-      (then
-      local.get 1
-      ref.cast (ref 45)
-      struct.get 45 0
-      return
-      )
-    )
-    local.get 1
     ref.test (ref 46)
     (if
       (then
       local.get 1
       ref.cast (ref 46)
       struct.get 46 0
+      return
+      )
+    )
+    local.get 1
+    ref.test (ref 47)
+    (if
+      (then
+      local.get 1
+      ref.cast (ref 47)
+      struct.get 47 0
       i64.eqz
       i32.eqz
       return
@@ -8372,20 +9380,7 @@
     )
     i32.const 1
   )
-  (func $__typeof_number (type 47)
-    local.get 0
-    ref.is_null
-    (if
-      (then
-      i32.const 0
-      return
-      )
-    )
-    local.get 0
-    any.convert_extern
-    ref.test (ref 44)
-  )
-  (func $__typeof_boolean (type 47)
+  (func $__typeof_number (type 48)
     local.get 0
     ref.is_null
     (if
@@ -8398,7 +9393,7 @@
     any.convert_extern
     ref.test (ref 45)
   )
-  (func $__typeof_bigint (type 47)
+  (func $__typeof_boolean (type 48)
     local.get 0
     ref.is_null
     (if
@@ -8411,7 +9406,20 @@
     any.convert_extern
     ref.test (ref 46)
   )
-  (func $__typeof_string (type 47)
+  (func $__typeof_bigint (type 48)
+    local.get 0
+    ref.is_null
+    (if
+      (then
+      i32.const 0
+      return
+      )
+    )
+    local.get 0
+    any.convert_extern
+    ref.test (ref 47)
+  )
+  (func $__typeof_string (type 48)
     local.get 0
     ref.is_null
     (if
@@ -8424,11 +9432,11 @@
     any.convert_extern
     ref.test (ref 6)
   )
-  (func $__typeof_undefined (type 47)
+  (func $__typeof_undefined (type 48)
     local.get 0
     ref.is_null
   )
-  (func $__typeof_object (type 47)
+  (func $__typeof_object (type 48)
     (local $$any_temp anyref)
     local.get 0
     ref.is_null
@@ -8441,14 +9449,6 @@
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 44)
-    (if
-      (then
-      i32.const 0
-      return
-      )
-    )
-    local.get 1
     ref.test (ref 45)
     (if
       (then
@@ -8458,6 +9458,14 @@
     )
     local.get 1
     ref.test (ref 46)
+    (if
+      (then
+      i32.const 0
+      return
+      )
+    )
+    local.get 1
+    ref.test (ref 47)
     (if
       (then
       i32.const 0
@@ -8474,13 +9482,13 @@
     )
     i32.const 1
   )
-  (func $__typeof_function (type 47)
+  (func $__typeof_function (type 48)
     i32.const 0
   )
-  (func $__typeof (type 52)
+  (func $__typeof (type 53)
     ref.null extern
   )
-  (func $__host_eq (type 54)
+  (func $__host_eq (type 55)
     (local $la anyref)
     (local $ra anyref)
     (local $fa f64)
@@ -8496,44 +9504,44 @@
       )
       (else
       local.get 0
-      call 58
+      call 60
       local.get 1
-      call 58
+      call 60
       i32.and
       (if (result i32)
         (then
         local.get 0
-        call 48
+        call 50
         local.get 1
-        call 48
+        call 50
         f64.eq
         )
         (else
         local.get 0
-        call 59
+        call 61
         local.get 1
-        call 59
+        call 61
         i32.and
         (if (result i32)
           (then
           local.get 0
-          call 51
+          call 53
           local.get 1
-          call 51
+          call 53
           i32.eq
           )
           (else
           local.get 0
-          call 60
+          call 62
           local.get 1
-          call 60
+          call 62
           i32.and
           (if (result i32)
             (then
             local.get 0
-            call 53
+            call 55
             local.get 1
-            call 53
+            call 55
             i64.eq
             )
             (else
@@ -8569,7 +9577,7 @@
       )
     )
   )
-  (func $__same_value_zero (type 54)
+  (func $__same_value_zero (type 55)
     (local $la anyref)
     (local $ra anyref)
     (local $fa f64)
@@ -8585,17 +9593,17 @@
       )
       (else
       local.get 0
-      call 58
+      call 60
       local.get 1
-      call 58
+      call 60
       i32.and
       (if (result i32)
         (then
         local.get 0
-        call 48
+        call 50
         local.set 4
         local.get 1
-        call 48
+        call 50
         local.set 5
         local.get 4
         local.get 5
@@ -8611,30 +9619,30 @@
         )
         (else
         local.get 0
-        call 59
+        call 61
         local.get 1
-        call 59
+        call 61
         i32.and
         (if (result i32)
           (then
           local.get 0
-          call 51
+          call 53
           local.get 1
-          call 51
+          call 53
           i32.eq
           )
           (else
           local.get 0
-          call 60
+          call 62
           local.get 1
-          call 60
+          call 62
           i32.and
           (if (result i32)
             (then
             local.get 0
-            call 53
+            call 55
             local.get 1
-            call 53
+            call 55
             i64.eq
             )
             (else
@@ -8670,7 +9678,7 @@
       )
     )
   )
-  (func $__extern_is_array (type 47)
+  (func $__extern_is_array (type 48)
     (local $any anyref)
     local.get 0
     any.convert_extern
@@ -8703,7 +9711,7 @@
             )
             (else
             local.get 1
-            ref.test (ref 59)
+            ref.test (ref 60)
             (if (result i32)
               (then
               i32.const 1
@@ -8721,7 +9729,7 @@
       )
     )
   )
-  (func $__obj_hash (type 47)
+  (func $__obj_hash (type 48)
     (local $str (ref null 7))
     (local $data (ref null 5))
     (local $len i32)
@@ -8772,23 +9780,23 @@
     i32.const 2147483647
     i32.and
   )
-  (func $__new_plain_object (type 62)
-    ref.null 57
+  (func $__new_plain_object (type 63)
+    ref.null 58
     i32.const 8
-    array.new_default 56
+    array.new_default 57
     i32.const 0
     i32.const 0
     i32.const 0
     i32.const 0
-    struct.new 57
+    struct.new 58
     extern.convert_any
   )
-  (func $__obj_find (param (ref null 57) externref) (result (ref null 55))
-    (local $arr (ref null 56))
+  (func $__obj_find (param (ref null 58) externref) (result (ref null 56))
+    (local $arr (ref null 57))
     (local $cap i32)
     (local $mask i32)
     (local $i i32)
-    (local $e (ref null 55))
+    (local $e (ref null 56))
     (local $fkey (ref null 7))
     local.get 1
     any.convert_extern
@@ -8796,7 +9804,7 @@
     call 3
     local.set 7
     local.get 0
-    struct.get 57 1
+    struct.get 58 1
     local.tee 2
     array.len
     local.tee 3
@@ -8804,7 +9812,7 @@
     i32.sub
     local.set 4
     local.get 1
-    call 69
+    call 71
     local.get 4
     i32.and
     local.set 5
@@ -8812,18 +9820,18 @@
       (loop
         local.get 2
         local.get 5
-        array.get 56
+        array.get 57
         local.tee 6
         ref.is_null
         (if
           (then
-          ref.null 55
+          ref.null 56
           return
           )
         )
         local.get 6
         ref.as_non_null
-        struct.get 55 2
+        struct.get 56 2
         i32.const 128
         i32.and
         i32.eqz
@@ -8831,7 +9839,7 @@
           (then
           local.get 6
           ref.as_non_null
-          struct.get 55 0
+          struct.get 56 0
           call 3
           ref.cast null (ref null 6)
           ref.cast null (ref null 6)
@@ -8854,32 +9862,32 @@
         br 0
       )
     )
-    ref.null 55
+    ref.null 56
   )
-  (func $__call_accessor_get (type 64)
+  (func $__call_accessor_get (type 65)
     ref.null extern
   )
-  (func $__extern_get (type 64)
-    (local $o (ref null 57))
-    (local $e (ref null 55))
+  (func $__extern_get (type 65)
+    (local $o (ref null 58))
+    (local $e (ref null 56))
     (local $any anyref)
     (local $getter externref)
     local.get 0
     any.convert_extern
-    ref.test (ref 61)
+    ref.test (ref 62)
     (if
       (then
       local.get 0
       local.get 1
       local.get 0
-      call 136
+      call 138
       return
       )
     )
     local.get 0
     any.convert_extern
     local.tee 4
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -8888,7 +9896,7 @@
       )
     )
     local.get 4
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.set 2
     (block
       (loop
@@ -8898,7 +9906,7 @@
         local.get 2
         ref.as_non_null
         local.get 1
-        call 71
+        call 73
         local.tee 3
         ref.is_null
         i32.eqz
@@ -8906,14 +9914,14 @@
           (then
           local.get 3
           ref.as_non_null
-          struct.get 55 2
+          struct.get 56 2
           i32.const 8
           i32.and
           (if
             (then
             local.get 3
             ref.as_non_null
-            struct.get 55 4
+            struct.get 56 4
             extern.convert_any
             local.tee 5
             ref.is_null
@@ -8925,32 +9933,32 @@
             )
             local.get 0
             local.get 5
-            call 72
+            call 74
             return
             )
           )
           local.get 3
           ref.as_non_null
-          struct.get 55 1
+          struct.get 56 1
           extern.convert_any
           return
           )
         )
         local.get 2
         ref.as_non_null
-        struct.get 57 0
+        struct.get 58 0
         local.set 2
         br 0
       )
     )
     ref.null extern
   )
-  (func $__obj_insert (param (ref null 57) externref anyref i32 i32)
-    (local $arr (ref null 56))
+  (func $__obj_insert (param (ref null 58) externref anyref i32 i32)
+    (local $arr (ref null 57))
     (local $cap i32)
     (local $mask i32)
     (local $i i32)
-    (local $e (ref null 55))
+    (local $e (ref null 56))
     (local $fkey (ref null 7))
     (local $keyStr (ref null 6))
     local.get 1
@@ -8960,7 +9968,7 @@
     call 3
     local.set 10
     local.get 0
-    struct.get 57 1
+    struct.get 58 1
     local.tee 5
     array.len
     local.tee 6
@@ -8968,7 +9976,7 @@
     i32.sub
     local.set 7
     local.get 1
-    call 69
+    call 71
     local.get 7
     i32.and
     local.set 8
@@ -8976,13 +9984,13 @@
       (loop
         local.get 5
         local.get 8
-        array.get 56
+        array.get 57
         local.tee 9
         ref.is_null
         (if
           (then
           local.get 0
-          struct.get 57 4
+          struct.get 58 4
           i32.const 1
           i32.and
           (if
@@ -8998,20 +10006,20 @@
           local.get 4
           ref.null -18
           ref.null -18
-          struct.new 55
-          array.set 56
+          struct.new 56
+          array.set 57
           local.get 0
           local.get 0
-          struct.get 57 2
+          struct.get 58 2
           i32.const 1
           i32.add
-          struct.set 57 2
+          struct.set 58 2
           return
           )
         )
         local.get 9
         ref.as_non_null
-        struct.get 55 0
+        struct.get 56 0
         call 3
         ref.cast null (ref null 6)
         ref.cast null (ref null 6)
@@ -9019,7 +10027,7 @@
         call 6
         local.get 9
         ref.as_non_null
-        struct.get 55 2
+        struct.get 56 2
         i32.const 128
         i32.and
         i32.eqz
@@ -9029,11 +10037,11 @@
           local.get 9
           ref.as_non_null
           local.get 2
-          struct.set 55 1
+          struct.set 56 1
           local.get 9
           ref.as_non_null
           local.get 3
-          struct.set 55 2
+          struct.set 56 2
           return
           )
         )
@@ -9049,18 +10057,18 @@
   )
   (func $__new_Number (type 40)
     (local $boxed externref)
-    (local $o (ref null 57))
+    (local $o (ref null 58))
     local.get 0
-    call 47
+    call 49
     local.set 1
-    ref.null 57
+    ref.null 58
     i32.const 8
-    array.new_default 56
+    array.new_default 57
     i32.const 0
     i32.const 0
     i32.const 0
     i32.const 1
-    struct.new 57
+    struct.new 58
     local.tee 2
     i32.const 18
     i32.const 0
@@ -9089,20 +10097,20 @@
     any.convert_extern
     i32.const 16
     i32.const 0
-    call 74
+    call 76
     local.get 2
     extern.convert_any
   )
-  (func $__new_String (type 52)
-    (local $o (ref null 57))
-    ref.null 57
+  (func $__new_String (type 53)
+    (local $o (ref null 58))
+    ref.null 58
     i32.const 8
-    array.new_default 56
+    array.new_default 57
     i32.const 0
     i32.const 0
     i32.const 0
     i32.const 1
-    struct.new 57
+    struct.new 58
     local.tee 1
     i32.const 18
     i32.const 0
@@ -9131,13 +10139,13 @@
     any.convert_extern
     i32.const 16
     i32.const 0
-    call 74
+    call 76
     local.get 1
     extern.convert_any
   )
   (func $__new_Boolean (type 40)
     (local $boxed externref)
-    (local $o (ref null 57))
+    (local $o (ref null 58))
     local.get 0
     f64.const 0
     f64.ne
@@ -9145,16 +10153,16 @@
     local.get 0
     f64.eq
     i32.and
-    call 49
+    call 51
     local.set 1
-    ref.null 57
+    ref.null 58
     i32.const 8
-    array.new_default 56
+    array.new_default 57
     i32.const 0
     i32.const 0
     i32.const 0
     i32.const 1
-    struct.new 57
+    struct.new 58
     local.tee 2
     i32.const 18
     i32.const 0
@@ -9183,18 +10191,18 @@
     any.convert_extern
     i32.const 16
     i32.const 0
-    call 74
+    call 76
     local.get 2
     extern.convert_any
   )
-  (func $__obj_grow (param (ref null 57))
-    (local $old (ref null 56))
+  (func $__obj_grow (param (ref null 58))
+    (local $old (ref null 57))
     (local $newCap i32)
     (local $i i32)
     (local $oldLen i32)
-    (local $e (ref null 55))
+    (local $e (ref null 56))
     local.get 0
-    struct.get 57 1
+    struct.get 58 1
     local.tee 1
     array.len
     local.tee 4
@@ -9203,14 +10211,14 @@
     local.set 2
     local.get 0
     local.get 2
-    array.new_default 56
-    struct.set 57 1
+    array.new_default 57
+    struct.set 58 1
     local.get 0
     i32.const 0
-    struct.set 57 2
+    struct.set 58 2
     local.get 0
     i32.const 0
-    struct.set 57 3
+    struct.set 58 3
     i32.const 0
     local.set 3
     (block
@@ -9221,7 +10229,7 @@
         br_if 1
         local.get 1
         local.get 3
-        array.get 56
+        array.get 57
         local.tee 5
         ref.is_null
         i32.eqz
@@ -9229,7 +10237,7 @@
           (then
           local.get 5
           ref.as_non_null
-          struct.get 55 2
+          struct.get 56 2
           i32.const 128
           i32.and
           i32.eqz
@@ -9238,18 +10246,18 @@
             local.get 0
             local.get 5
             ref.as_non_null
-            struct.get 55 0
+            struct.get 56 0
             extern.convert_any
             local.get 5
             ref.as_non_null
-            struct.get 55 1
+            struct.get 56 1
             local.get 5
             ref.as_non_null
-            struct.get 55 2
+            struct.get 56 2
             local.get 5
             ref.as_non_null
-            struct.get 55 3
-            call 74
+            struct.get 56 3
+            call 76
             )
           )
           )
@@ -9262,25 +10270,25 @@
       )
     )
   )
-  (func $__call_accessor_set (type 67)
+  (func $__call_accessor_set (type 68)
   )
-  (func $__extern_set (type 67)
-    (local $o (ref null 57))
+  (func $__extern_set (type 68)
+    (local $o (ref null 58))
     (local $cap i32)
     (local $load i32)
     (local $any anyref)
     (local $seq i32)
-    (local $accEntry (ref null 55))
+    (local $accEntry (ref null 56))
     (local $setter externref)
     local.get 0
     any.convert_extern
-    ref.test (ref 61)
+    ref.test (ref 62)
     (if
       (then
       local.get 0
       local.get 1
       local.get 2
-      call 137
+      call 139
       drop
       return
       )
@@ -9288,7 +10296,7 @@
     local.get 0
     any.convert_extern
     local.tee 6
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -9296,11 +10304,11 @@
       )
     )
     local.get 6
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.tee 3
     ref.as_non_null
     local.get 1
-    call 71
+    call 73
     local.tee 8
     ref.is_null
     i32.eqz
@@ -9308,14 +10316,14 @@
       (then
       local.get 8
       ref.as_non_null
-      struct.get 55 2
+      struct.get 56 2
       i32.const 8
       i32.and
       (if
         (then
         local.get 8
         ref.as_non_null
-        struct.get 55 5
+        struct.get 56 5
         extern.convert_any
         local.tee 9
         ref.is_null
@@ -9325,7 +10333,7 @@
           local.get 0
           local.get 9
           local.get 2
-          call 79
+          call 81
           )
         )
         return
@@ -9334,7 +10342,7 @@
       )
     )
     local.get 3
-    struct.get 57 4
+    struct.get 58 4
     i32.const 4
     i32.and
     (if
@@ -9343,13 +10351,13 @@
       )
     )
     local.get 3
-    struct.get 57 2
+    struct.get 58 2
     local.get 3
-    struct.get 57 3
+    struct.get 58 3
     i32.add
     local.set 5
     local.get 3
-    struct.get 57 1
+    struct.get 58 1
     array.len
     local.set 4
     local.get 5
@@ -9365,19 +10373,19 @@
       (then
       local.get 3
       ref.as_non_null
-      call 78
+      call 80
       )
     )
     local.get 3
     ref.as_non_null
-    struct.get 57 5
+    struct.get 58 5
     local.set 7
     local.get 3
     ref.as_non_null
     local.get 7
     i32.const 1
     i32.add
-    struct.set 57 5
+    struct.set 58 5
     local.get 3
     ref.as_non_null
     local.get 1
@@ -9385,16 +10393,16 @@
     any.convert_extern
     i32.const 7
     local.get 7
-    call 74
+    call 76
   )
   (func $__reflect_set (param externref externref externref) (result i32)
     (local $any anyref)
-    (local $o (ref null 57))
-    (local $e (ref null 55))
+    (local $o (ref null 58))
+    (local $e (ref null 56))
     local.get 0
     any.convert_extern
     local.tee 3
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -9403,11 +10411,11 @@
       )
     )
     local.get 3
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.tee 4
     ref.as_non_null
     local.get 1
-    call 71
+    call 73
     local.tee 5
     ref.is_null
     i32.eqz
@@ -9415,14 +10423,14 @@
       (then
       local.get 5
       ref.as_non_null
-      struct.get 55 2
+      struct.get 56 2
       i32.const 8
       i32.and
       (if
         (then
         local.get 5
         ref.as_non_null
-        struct.get 55 5
+        struct.get 56 5
         extern.convert_any
         ref.is_null
         (if
@@ -9434,14 +10442,14 @@
         local.get 0
         local.get 1
         local.get 2
-        call 80
+        call 82
         i32.const 1
         return
         )
       )
       local.get 5
       ref.as_non_null
-      struct.get 55 2
+      struct.get 56 2
       i32.const 1
       i32.and
       i32.eqz
@@ -9453,7 +10461,7 @@
       )
       local.get 4
       ref.as_non_null
-      struct.get 57 4
+      struct.get 58 4
       i32.const 4
       i32.and
       (if
@@ -9465,14 +10473,14 @@
       local.get 0
       local.get 1
       local.get 2
-      call 80
+      call 82
       i32.const 1
       return
       )
     )
     local.get 4
     ref.as_non_null
-    struct.get 57 4
+    struct.get 58 4
     i32.const 1
     i32.and
     (if
@@ -9484,30 +10492,30 @@
     local.get 0
     local.get 1
     local.get 2
-    call 80
+    call 82
     i32.const 1
   )
-  (func $__delete_property (type 54)
+  (func $__delete_property (type 55)
     (local $any anyref)
-    (local $o (ref null 57))
-    (local $e (ref null 55))
+    (local $o (ref null 58))
+    (local $e (ref null 56))
     local.get 0
     any.convert_extern
-    ref.test (ref 61)
+    ref.test (ref 62)
     (if
       (then
       local.get 0
       local.get 1
       local.get 0
-      call 139
-      call 57
+      call 141
+      call 59
       return
       )
     )
     local.get 0
     any.convert_extern
     local.tee 2
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -9516,10 +10524,10 @@
       )
     )
     local.get 2
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.tee 3
     local.get 1
-    call 71
+    call 73
     local.tee 4
     ref.is_null
     (if
@@ -9530,12 +10538,12 @@
     )
     local.get 3
     ref.as_non_null
-    struct.get 57 4
+    struct.get 58 4
     i32.const 2
     i32.and
     local.get 4
     ref.as_non_null
-    struct.get 55 2
+    struct.get 56 2
     i32.const 4
     i32.and
     i32.eqz
@@ -9550,47 +10558,47 @@
     ref.as_non_null
     local.get 4
     ref.as_non_null
-    struct.get 55 2
+    struct.get 56 2
     i32.const 128
     i32.or
-    struct.set 55 2
+    struct.set 56 2
     local.get 3
     ref.as_non_null
     local.get 3
     ref.as_non_null
-    struct.get 57 2
+    struct.get 58 2
     i32.const 1
     i32.sub
-    struct.set 57 2
+    struct.set 58 2
     local.get 3
     ref.as_non_null
     local.get 3
     ref.as_non_null
-    struct.get 57 3
+    struct.get 58 3
     i32.const 1
     i32.add
-    struct.set 57 3
+    struct.set 58 3
     i32.const 1
   )
-  (func $__objvec_new (type 62)
+  (func $__objvec_new (type 63)
     i32.const 0
     i32.const 8
-    array.new_default 58
-    struct.new 59
+    array.new_default 59
+    struct.new 60
     extern.convert_any
   )
   (func $__objvec_push (param externref externref)
     (local $any anyref)
-    (local $v (ref null 59))
-    (local $arr (ref null 58))
+    (local $v (ref null 60))
+    (local $arr (ref null 59))
     (local $len i32)
     (local $cap i32)
-    (local $narr (ref null 58))
+    (local $narr (ref null 59))
     (local $i i32)
     local.get 0
     any.convert_extern
     local.tee 2
-    ref.test (ref 59)
+    ref.test (ref 60)
     i32.eqz
     (if
       (then
@@ -9598,16 +10606,16 @@
       )
     )
     local.get 2
-    ref.cast (ref 59)
+    ref.cast (ref 60)
     local.tee 3
     ref.as_non_null
-    struct.get 59 1
+    struct.get 60 1
     local.tee 4
     array.len
     local.set 6
     local.get 3
     ref.as_non_null
-    struct.get 59 0
+    struct.get 60 0
     local.tee 5
     local.get 6
     i32.ge_s
@@ -9616,7 +10624,7 @@
       local.get 6
       i32.const 2
       i32.mul
-      array.new_default 58
+      array.new_default 59
       local.set 7
       i32.const 0
       local.set 8
@@ -9632,8 +10640,8 @@
           local.get 4
           ref.as_non_null
           local.get 8
-          array.get 58
-          array.set 58
+          array.get 59
+          array.set 59
           local.get 8
           i32.const 1
           i32.add
@@ -9645,7 +10653,7 @@
       ref.as_non_null
       local.get 7
       ref.as_non_null
-      struct.set 59 1
+      struct.set 60 1
       local.get 7
       local.set 4
       )
@@ -9654,20 +10662,20 @@
     ref.as_non_null
     local.get 5
     local.get 1
-    array.set 58
+    array.set 59
     local.get 3
     ref.as_non_null
     local.get 5
     i32.const 1
     i32.add
-    struct.set 59 0
+    struct.set 60 0
   )
-  (func $__hasOwnProperty (type 54)
+  (func $__hasOwnProperty (type 55)
     (local $any anyref)
     local.get 0
     any.convert_extern
     local.tee 2
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -9676,18 +10684,18 @@
       )
     )
     local.get 2
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.get 1
-    call 71
+    call 73
     ref.is_null
     i32.eqz
   )
-  (func $__object_hasOwn (type 54)
+  (func $__object_hasOwn (type 55)
     (local $any anyref)
     local.get 0
     any.convert_extern
     local.tee 2
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -9696,19 +10704,19 @@
       )
     )
     local.get 2
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.get 1
-    call 71
+    call 73
     ref.is_null
     i32.eqz
   )
-  (func $__propertyIsEnumerable (type 54)
+  (func $__propertyIsEnumerable (type 55)
     (local $any anyref)
-    (local $e (ref null 55))
+    (local $e (ref null 56))
     local.get 0
     any.convert_extern
     local.tee 2
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -9717,9 +10725,9 @@
       )
     )
     local.get 2
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.get 1
-    call 71
+    call 73
     local.tee 3
     ref.is_null
     (if
@@ -9730,32 +10738,32 @@
     )
     local.get 3
     ref.as_non_null
-    struct.get 55 2
+    struct.get 56 2
     i32.const 2
     i32.and
     i32.const 0
     i32.ne
   )
-  (func $__extern_has (type 54)
-    (local $o (ref null 57))
+  (func $__extern_has (type 55)
+    (local $o (ref null 58))
     (local $any anyref)
     local.get 0
     any.convert_extern
-    ref.test (ref 61)
+    ref.test (ref 62)
     (if
       (then
       local.get 0
       local.get 1
       local.get 0
-      call 138
-      call 57
+      call 140
+      call 59
       return
       )
     )
     local.get 0
     any.convert_extern
     local.tee 3
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -9764,7 +10772,7 @@
       )
     )
     local.get 3
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.set 2
     (block
       (loop
@@ -9774,7 +10782,7 @@
         local.get 2
         ref.as_non_null
         local.get 1
-        call 71
+        call 73
         ref.is_null
         i32.eqz
         (if
@@ -9785,18 +10793,18 @@
         )
         local.get 2
         ref.as_non_null
-        struct.get 57 0
+        struct.get 58 0
         local.set 2
         br 0
       )
     )
     i32.const 0
   )
-  (func $__to_primitive (type 64)
+  (func $__to_primitive (type 65)
     (local $any anyref)
     (local $method externref)
     (local $result externref)
-    (local $slot (ref null 55))
+    (local $slot (ref null 56))
     local.get 0
     ref.is_null
     (if
@@ -9808,7 +10816,7 @@
     local.get 0
     any.convert_extern
     local.tee 2
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -9817,7 +10825,7 @@
       )
     )
     local.get 2
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     i32.const 18
     i32.const 0
     i32.const 91
@@ -9841,7 +10849,7 @@
     array.new_fixed 5 18
     struct.new 7
     extern.convert_any
-    call 71
+    call 73
     local.tee 5
     ref.is_null
     i32.eqz
@@ -9849,14 +10857,14 @@
       (then
       local.get 5
       ref.as_non_null
-      struct.get 55 2
+      struct.get 56 2
       i32.const 16
       i32.and
       (if
         (then
         local.get 5
         ref.as_non_null
-        struct.get 55 1
+        struct.get 56 1
         extern.convert_any
         return
         )
@@ -9871,7 +10879,7 @@
       )
       (else
       local.get 1
-      call 61
+      call 63
       (if (result i32)
         (then
         local.get 1
@@ -9915,7 +10923,7 @@
       array.new_fixed 5 8
       struct.new 7
       extern.convert_any
-      call 73
+      call 75
       local.tee 3
       ref.is_null
       (if
@@ -9934,7 +10942,7 @@
         array.new_fixed 5 8
         struct.new 7
         extern.convert_any
-        call 88
+        call 90
         i32.eqz
         (if
           (then
@@ -9964,12 +10972,12 @@
         )
         (else
         local.get 3
-        call 64
+        call 66
         (if
           (then
           local.get 0
           local.get 3
-          call 72
+          call 74
           local.tee 4
           ref.is_null
           (if
@@ -9979,15 +10987,7 @@
             )
           )
           local.get 4
-          call 58
-          (if
-            (then
-            local.get 4
-            return
-            )
-          )
-          local.get 4
-          call 59
+          call 60
           (if
             (then
             local.get 4
@@ -9996,6 +10996,14 @@
           )
           local.get 4
           call 61
+          (if
+            (then
+            local.get 4
+            return
+            )
+          )
+          local.get 4
+          call 63
           (if
             (then
             local.get 4
@@ -10019,7 +11027,7 @@
       array.new_fixed 5 7
       struct.new 7
       extern.convert_any
-      call 73
+      call 75
       local.tee 3
       ref.is_null
       (if
@@ -10028,12 +11036,12 @@
         )
         (else
         local.get 3
-        call 64
+        call 66
         (if
           (then
           local.get 0
           local.get 3
-          call 72
+          call 74
           local.tee 4
           ref.is_null
           (if
@@ -10043,15 +11051,7 @@
             )
           )
           local.get 4
-          call 58
-          (if
-            (then
-            local.get 4
-            return
-            )
-          )
-          local.get 4
-          call 59
+          call 60
           (if
             (then
             local.get 4
@@ -10060,6 +11060,14 @@
           )
           local.get 4
           call 61
+          (if
+            (then
+            local.get 4
+            return
+            )
+          )
+          local.get 4
+          call 63
           (if
             (then
             local.get 4
@@ -10085,7 +11093,7 @@
       array.new_fixed 5 7
       struct.new 7
       extern.convert_any
-      call 73
+      call 75
       local.tee 3
       ref.is_null
       (if
@@ -10094,12 +11102,12 @@
         )
         (else
         local.get 3
-        call 64
+        call 66
         (if
           (then
           local.get 0
           local.get 3
-          call 72
+          call 74
           local.tee 4
           ref.is_null
           (if
@@ -10109,15 +11117,7 @@
             )
           )
           local.get 4
-          call 58
-          (if
-            (then
-            local.get 4
-            return
-            )
-          )
-          local.get 4
-          call 59
+          call 60
           (if
             (then
             local.get 4
@@ -10126,6 +11126,14 @@
           )
           local.get 4
           call 61
+          (if
+            (then
+            local.get 4
+            return
+            )
+          )
+          local.get 4
+          call 63
           (if
             (then
             local.get 4
@@ -10150,7 +11158,7 @@
       array.new_fixed 5 8
       struct.new 7
       extern.convert_any
-      call 73
+      call 75
       local.tee 3
       ref.is_null
       (if
@@ -10169,7 +11177,7 @@
         array.new_fixed 5 8
         struct.new 7
         extern.convert_any
-        call 88
+        call 90
         i32.eqz
         (if
           (then
@@ -10199,12 +11207,12 @@
         )
         (else
         local.get 3
-        call 64
+        call 66
         (if
           (then
           local.get 0
           local.get 3
-          call 72
+          call 74
           local.tee 4
           ref.is_null
           (if
@@ -10214,15 +11222,7 @@
             )
           )
           local.get 4
-          call 58
-          (if
-            (then
-            local.get 4
-            return
-            )
-          )
-          local.get 4
-          call 59
+          call 60
           (if
             (then
             local.get 4
@@ -10231,6 +11231,14 @@
           )
           local.get 4
           call 61
+          (if
+            (then
+            local.get 4
+            return
+            )
+          )
+          local.get 4
+          call 63
           (if
             (then
             local.get 4
@@ -10288,11 +11296,11 @@
     array.new_fixed 5 40
     struct.new 7
     extern.convert_any
-    call 52
+    call 54
     throw 0
   )
   (func $__any_to_string (param anyref) (result (ref null 6))
-    (local $box (ref null 70))
+    (local $box (ref null 71))
     (local $recover anyref)
     local.get 0
     ref.test (ref 6)
@@ -10303,13 +11311,13 @@
       )
       (else
       local.get 0
-      ref.test (ref 70)
+      ref.test (ref 71)
       (if (result (ref null 6))
         (then
         local.get 0
-        ref.cast (ref 70)
+        ref.cast (ref 71)
         local.tee 1
-        struct.get 70 0
+        struct.get 71 0
         i32.const 0
         i32.eq
         (if (result (ref null 6))
@@ -10325,7 +11333,7 @@
           )
           (else
           local.get 1
-          struct.get 70 0
+          struct.get 71 0
           i32.const 1
           i32.eq
           (if (result (ref null 6))
@@ -10346,7 +11354,7 @@
             )
             (else
             local.get 1
-            struct.get 70 0
+            struct.get 71 0
             i32.const 2
             i32.eq
             (if (result (ref null 6))
@@ -10373,7 +11381,7 @@
               )
               (else
               local.get 1
-              struct.get 70 0
+              struct.get 71 0
               i32.const 3
               i32.eq
               (if (result (ref null 6))
@@ -10400,13 +11408,13 @@
                 )
                 (else
                 local.get 1
-                struct.get 70 0
+                struct.get 71 0
                 i32.const 4
                 i32.eq
                 (if (result (ref null 6))
                   (then
                   local.get 1
-                  struct.get 70 1
+                  struct.get 71 1
                   (if (result (ref null 6))
                     (then
                     i32.const 4
@@ -10433,13 +11441,13 @@
                   )
                   (else
                   local.get 1
-                  struct.get 70 0
+                  struct.get 71 0
                   i32.const 5
                   i32.eq
                   (if (result (ref null 6))
                     (then
                     local.get 1
-                    struct.get 70 4
+                    struct.get 71 4
                     any.convert_extern
                     local.tee 2
                     ref.test (ref 6)
@@ -10453,13 +11461,13 @@
                       extern.convert_any
                       any.convert_extern
                       local.tee 2
-                      ref.test (ref 57)
+                      ref.test (ref 58)
                       (if (result (ref null 6))
                         (then
                         local.get 2
                         extern.convert_any
                         ref.null extern
-                        call 89
+                        call 91
                         any.convert_extern
                         local.tee 2
                         ref.test (ref 6)
@@ -10470,7 +11478,7 @@
                           )
                           (else
                           local.get 2
-                          ref.test (ref 44)
+                          ref.test (ref 45)
                           (if (result (ref null 6))
                             (then
                             i32.const 15
@@ -10495,12 +11503,12 @@
                             )
                             (else
                             local.get 2
-                            ref.test (ref 45)
+                            ref.test (ref 46)
                             (if (result (ref null 6))
                               (then
                               local.get 2
-                              ref.cast (ref 45)
-                              struct.get 45 0
+                              ref.cast (ref 46)
+                              struct.get 46 0
                               (if (result (ref null 6))
                                 (then
                                 i32.const 4
@@ -10565,7 +11573,7 @@
                           )
                           (else
                           local.get 2
-                          ref.test (ref 44)
+                          ref.test (ref 45)
                           (if (result (ref null 6))
                             (then
                             i32.const 15
@@ -10590,12 +11598,12 @@
                             )
                             (else
                             local.get 2
-                            ref.test (ref 45)
+                            ref.test (ref 46)
                             (if (result (ref null 6))
                               (then
                               local.get 2
-                              ref.cast (ref 45)
-                              struct.get 45 0
+                              ref.cast (ref 46)
+                              struct.get 46 0
                               (if (result (ref null 6))
                                 (then
                                 i32.const 4
@@ -10686,7 +11694,7 @@
         )
         (else
         local.get 0
-        ref.test (ref 44)
+        ref.test (ref 45)
         (if (result (ref null 6))
           (then
           i32.const 15
@@ -10711,12 +11719,12 @@
           )
           (else
           local.get 0
-          ref.test (ref 45)
+          ref.test (ref 46)
           (if (result (ref null 6))
             (then
             local.get 0
-            ref.cast (ref 45)
-            struct.get 45 0
+            ref.cast (ref 46)
+            struct.get 46 0
             (if (result (ref null 6))
               (then
               i32.const 4
@@ -10770,7 +11778,7 @@
       )
     )
   )
-  (func $__extern_toString (type 52)
+  (func $__extern_toString (type 53)
     local.get 0
     ref.is_null
     (if (result externref)
@@ -10780,7 +11788,7 @@
       (else
       local.get 0
       any.convert_extern
-      ref.test (ref 57)
+      ref.test (ref 58)
       (if (result externref)
         (then
         local.get 0
@@ -10795,7 +11803,7 @@
         array.new_fixed 5 6
         struct.new 7
         extern.convert_any
-        call 89
+        call 91
         )
         (else
         local.get 0
@@ -10804,31 +11812,31 @@
       )
     )
     any.convert_extern
-    call 90
+    call 92
     extern.convert_any
   )
-  (func $__getPrototypeOf (type 52)
+  (func $__getPrototypeOf (type 53)
     (local $any anyref)
     local.get 0
     any.convert_extern
-    ref.test (ref 61)
+    ref.test (ref 62)
     (if
       (then
       local.get 0
       local.get 0
-      call 141
+      call 143
       return
       )
     )
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 57)
+    ref.test (ref 58)
     (if (result externref)
       (then
       local.get 1
-      ref.cast (ref 57)
-      struct.get 57 0
+      ref.cast (ref 58)
+      struct.get 58 0
       extern.convert_any
       )
       (else
@@ -10836,24 +11844,24 @@
       )
     )
   )
-  (func $__object_create (type 52)
+  (func $__object_create (type 53)
     (local $any anyref)
-    (local $props (ref null 56))
-    ref.null 55
+    (local $props (ref null 57))
+    ref.null 56
     i32.const 8
-    array.new 56
+    array.new 57
     local.set 2
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 57)
-    (if (result (ref null 57))
+    ref.test (ref 58)
+    (if (result (ref null 58))
       (then
       local.get 1
-      ref.cast (ref 57)
+      ref.cast (ref 58)
       )
       (else
-      ref.null 57
+      ref.null 58
       )
     )
     local.get 2
@@ -10861,33 +11869,33 @@
     i32.const 0
     i32.const 0
     i32.const 0
-    struct.new 57
+    struct.new 58
     extern.convert_any
   )
-  (func $__object_setPrototypeOf (type 64)
-    (local $o (ref null 57))
-    (local $v (ref null 57))
-    (local $p (ref null 57))
+  (func $__object_setPrototypeOf (type 65)
+    (local $o (ref null 58))
+    (local $v (ref null 58))
+    (local $p (ref null 58))
     (local $any anyref)
     local.get 0
     any.convert_extern
-    ref.test (ref 61)
+    ref.test (ref 62)
     (if
       (then
       local.get 0
       local.get 1
-      call 142
+      call 144
       return
       )
     )
     local.get 0
     any.convert_extern
     local.tee 5
-    ref.test (ref 57)
+    ref.test (ref 58)
     (if
       (then
       local.get 5
-      ref.cast (ref 57)
+      ref.cast (ref 58)
       local.set 2
       )
       (else
@@ -10898,20 +11906,20 @@
     local.get 1
     any.convert_extern
     local.tee 5
-    ref.test (ref 57)
-    (if (result (ref null 57))
+    ref.test (ref 58)
+    (if (result (ref null 58))
       (then
       local.get 5
-      ref.cast (ref 57)
+      ref.cast (ref 58)
       )
       (else
-      ref.null 57
+      ref.null 58
       )
     )
     local.tee 3
     local.get 2
     ref.as_non_null
-    struct.get 57 0
+    struct.get 58 0
     ref.eq
     (if
       (then
@@ -10921,7 +11929,7 @@
     )
     local.get 2
     ref.as_non_null
-    struct.get 57 4
+    struct.get 58 4
     i32.const 1
     i32.and
     (if
@@ -10950,7 +11958,7 @@
         )
         local.get 4
         ref.as_non_null
-        struct.get 57 0
+        struct.get 58 0
         local.set 4
         br 0
       )
@@ -10958,17 +11966,17 @@
     local.get 2
     ref.as_non_null
     local.get 3
-    struct.set 57 0
+    struct.set 58 0
     local.get 0
   )
-  (func $__isPrototypeOf (type 54)
-    (local $target (ref null 57))
-    (local $cur (ref null 57))
+  (func $__isPrototypeOf (type 55)
+    (local $target (ref null 58))
+    (local $cur (ref null 58))
     (local $any anyref)
     local.get 0
     any.convert_extern
     local.tee 4
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -10977,19 +11985,19 @@
       )
     )
     local.get 4
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.set 2
     local.get 1
     any.convert_extern
     local.tee 4
-    ref.test (ref 57)
-    (if (result (ref null 57))
+    ref.test (ref 58)
+    (if (result (ref null 58))
       (then
       local.get 4
-      ref.cast (ref 57)
+      ref.cast (ref 58)
       )
       (else
-      ref.null 57
+      ref.null 58
       )
     )
     local.set 3
@@ -11000,7 +12008,7 @@
         br_if 1
         local.get 3
         ref.as_non_null
-        struct.get 57 0
+        struct.get 58 0
         local.tee 3
         ref.is_null
         br_if 1
@@ -11125,31 +12133,31 @@
     )
     local.get 7
   )
-  (func $__obj_ordered (type 73)
-    (local $arr (ref null 56))
+  (func $__obj_ordered (type 74)
+    (local $arr (ref null 57))
     (local $cap i32)
     (local $i i32)
-    (local $e (ref null 55))
-    (local $out (ref null 56))
+    (local $e (ref null 56))
+    (local $out (ref null 57))
     (local $m i32)
     (local $j i32)
     (local $best i32)
     (local $k i32)
-    (local $cand (ref null 55))
-    (local $bestE (ref null 55))
+    (local $cand (ref null 56))
+    (local $bestE (ref null 56))
     (local $candIdx i32)
     (local $bestIdx i32)
     (local $candSeq i32)
     (local $bestSeq i32)
-    (local $tmp (ref null 55))
+    (local $tmp (ref null 56))
     local.get 0
-    struct.get 57 1
+    struct.get 58 1
     local.tee 1
     array.len
     local.set 2
     local.get 0
-    struct.get 57 2
-    array.new_default 56
+    struct.get 58 2
+    array.new_default 57
     local.set 5
     i32.const 0
     local.set 6
@@ -11163,7 +12171,7 @@
         br_if 1
         local.get 1
         local.get 3
-        array.get 56
+        array.get 57
         local.tee 4
         ref.is_null
         i32.eqz
@@ -11171,13 +12179,13 @@
           (then
           local.get 4
           ref.as_non_null
-          struct.get 55 2
+          struct.get 56 2
           i32.const 128
           i32.and
           i32.eqz
           local.get 4
           ref.as_non_null
-          struct.get 55 2
+          struct.get 56 2
           i32.const 2
           i32.and
           i32.eqz
@@ -11188,7 +12196,7 @@
             local.get 5
             local.get 6
             local.get 4
-            array.set 56
+            array.set 57
             local.get 6
             i32.const 1
             i32.add
@@ -11216,15 +12224,15 @@
         local.set 8
         local.get 5
         local.get 7
-        array.get 56
+        array.get 57
         local.tee 11
         ref.as_non_null
-        struct.get 55 0
-        call 96
+        struct.get 56 0
+        call 98
         local.set 13
         local.get 11
         ref.as_non_null
-        struct.get 55 3
+        struct.get 56 3
         local.set 15
         local.get 7
         i32.const 1
@@ -11238,15 +12246,15 @@
             br_if 1
             local.get 5
             local.get 9
-            array.get 56
+            array.get 57
             local.tee 10
             ref.as_non_null
-            struct.get 55 0
-            call 96
+            struct.get 56 0
+            call 98
             local.set 12
             local.get 10
             ref.as_non_null
-            struct.get 55 3
+            struct.get 56 3
             local.set 14
             local.get 12
             i32.const 0
@@ -11309,16 +12317,16 @@
           (then
           local.get 5
           local.get 7
-          array.get 56
+          array.get 57
           local.set 16
           local.get 5
           local.get 7
           local.get 11
-          array.set 56
+          array.set 57
           local.get 5
           local.get 8
           local.get 16
-          array.set 56
+          array.set 57
           )
         )
         local.get 7
@@ -11330,31 +12338,31 @@
     )
     local.get 5
   )
-  (func $__obj_ordered_all (type 73)
-    (local $arr (ref null 56))
+  (func $__obj_ordered_all (type 74)
+    (local $arr (ref null 57))
     (local $cap i32)
     (local $i i32)
-    (local $e (ref null 55))
-    (local $out (ref null 56))
+    (local $e (ref null 56))
+    (local $out (ref null 57))
     (local $m i32)
     (local $j i32)
     (local $best i32)
     (local $k i32)
-    (local $cand (ref null 55))
-    (local $bestE (ref null 55))
+    (local $cand (ref null 56))
+    (local $bestE (ref null 56))
     (local $candIdx i32)
     (local $bestIdx i32)
     (local $candSeq i32)
     (local $bestSeq i32)
-    (local $tmp (ref null 55))
+    (local $tmp (ref null 56))
     local.get 0
-    struct.get 57 1
+    struct.get 58 1
     local.tee 1
     array.len
     local.set 2
     local.get 0
-    struct.get 57 2
-    array.new_default 56
+    struct.get 58 2
+    array.new_default 57
     local.set 5
     i32.const 0
     local.set 6
@@ -11368,7 +12376,7 @@
         br_if 1
         local.get 1
         local.get 3
-        array.get 56
+        array.get 57
         local.tee 4
         ref.is_null
         i32.eqz
@@ -11376,7 +12384,7 @@
           (then
           local.get 4
           ref.as_non_null
-          struct.get 55 2
+          struct.get 56 2
           i32.const 128
           i32.and
           i32.eqz
@@ -11385,7 +12393,7 @@
             local.get 5
             local.get 6
             local.get 4
-            array.set 56
+            array.set 57
             local.get 6
             i32.const 1
             i32.add
@@ -11413,15 +12421,15 @@
         local.set 8
         local.get 5
         local.get 7
-        array.get 56
+        array.get 57
         local.tee 11
         ref.as_non_null
-        struct.get 55 0
-        call 96
+        struct.get 56 0
+        call 98
         local.set 13
         local.get 11
         ref.as_non_null
-        struct.get 55 3
+        struct.get 56 3
         local.set 15
         local.get 7
         i32.const 1
@@ -11435,15 +12443,15 @@
             br_if 1
             local.get 5
             local.get 9
-            array.get 56
+            array.get 57
             local.tee 10
             ref.as_non_null
-            struct.get 55 0
-            call 96
+            struct.get 56 0
+            call 98
             local.set 12
             local.get 10
             ref.as_non_null
-            struct.get 55 3
+            struct.get 56 3
             local.set 14
             local.get 12
             i32.const 0
@@ -11506,16 +12514,16 @@
           (then
           local.get 5
           local.get 7
-          array.get 56
+          array.get 57
           local.set 16
           local.get 5
           local.get 7
           local.get 11
-          array.set 56
+          array.set 57
           local.get 5
           local.get 8
           local.get 16
-          array.set 56
+          array.set 57
           )
         )
         local.get 7
@@ -11527,31 +12535,31 @@
     )
     local.get 5
   )
-  (func $__object_keys (type 52)
+  (func $__object_keys (type 53)
     (local $any anyref)
-    (local $o (ref null 57))
-    (local $arr (ref null 56))
+    (local $o (ref null 58))
+    (local $arr (ref null 57))
     (local $cap i32)
     (local $i i32)
-    (local $e (ref null 55))
+    (local $e (ref null 56))
     (local $vec externref)
     local.get 0
     any.convert_extern
-    ref.test (ref 61)
+    ref.test (ref 62)
     (if
       (then
       local.get 0
       local.get 0
-      call 145
+      call 147
       return
       )
     )
-    call 83
+    call 85
     local.set 7
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -11560,9 +12568,9 @@
       )
     )
     local.get 1
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.tee 2
-    call 97
+    call 99
     local.tee 3
     array.len
     local.set 4
@@ -11576,16 +12584,16 @@
         br_if 1
         local.get 3
         local.get 5
-        array.get 56
+        array.get 57
         local.tee 6
         ref.is_null
         br_if 1
         local.get 7
         local.get 6
         ref.as_non_null
-        struct.get 55 0
+        struct.get 56 0
         extern.convert_any
-        call 84
+        call 86
         local.get 5
         i32.const 1
         i32.add
@@ -11595,19 +12603,19 @@
     )
     local.get 7
   )
-  (func $__extern_length (type 48)
+  (func $__extern_length (type 49)
     (local $any anyref)
     (local $lenF64 f64)
     (local $lenTrunc f64)
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 59)
+    ref.test (ref 60)
     (if (result f64)
       (then
       local.get 1
-      ref.cast (ref 59)
-      struct.get 59 0
+      ref.cast (ref 60)
+      struct.get 60 0
       f64.convert_i32_s
       )
       (else
@@ -11617,12 +12625,12 @@
   )
   (func $__extern_get_idx (param externref f64) (result externref)
     (local $any anyref)
-    (local $vec (ref null 59))
+    (local $vec (ref null 60))
     (local $i i32)
     local.get 0
     any.convert_extern
     local.tee 2
-    ref.test (ref 59)
+    ref.test (ref 60)
     i32.eqz
     (if
       (then
@@ -11631,7 +12639,7 @@
       )
     )
     local.get 2
-    ref.cast (ref 59)
+    ref.cast (ref 60)
     local.set 3
     local.get 1
     i32.trunc_sat_f64_s
@@ -11647,7 +12655,7 @@
     local.get 4
     local.get 3
     ref.as_non_null
-    struct.get 59 0
+    struct.get 60 0
     i32.ge_s
     (if
       (then
@@ -11657,24 +12665,24 @@
     )
     local.get 3
     ref.as_non_null
-    struct.get 59 1
+    struct.get 60 1
     local.get 4
-    array.get 58
+    array.get 59
   )
-  (func $__object_values (type 52)
+  (func $__object_values (type 53)
     (local $any anyref)
-    (local $o (ref null 57))
-    (local $arr (ref null 56))
+    (local $o (ref null 58))
+    (local $arr (ref null 57))
     (local $cap i32)
     (local $i i32)
-    (local $e (ref null 55))
+    (local $e (ref null 56))
     (local $vec externref)
-    call 83
+    call 85
     local.set 7
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -11683,9 +12691,9 @@
       )
     )
     local.get 1
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.tee 2
-    call 97
+    call 99
     local.tee 3
     array.len
     local.set 4
@@ -11699,16 +12707,16 @@
         br_if 1
         local.get 3
         local.get 5
-        array.get 56
+        array.get 57
         local.tee 6
         ref.is_null
         br_if 1
         local.get 7
         local.get 6
         ref.as_non_null
-        struct.get 55 1
+        struct.get 56 1
         extern.convert_any
-        call 84
+        call 86
         local.get 5
         i32.const 1
         i32.add
@@ -11718,21 +12726,21 @@
     )
     local.get 7
   )
-  (func $__object_entries (type 52)
+  (func $__object_entries (type 53)
     (local $any anyref)
-    (local $o (ref null 57))
-    (local $arr (ref null 56))
+    (local $o (ref null 58))
+    (local $arr (ref null 57))
     (local $cap i32)
     (local $i i32)
-    (local $e (ref null 55))
+    (local $e (ref null 56))
     (local $vec externref)
     (local $pair externref)
-    call 83
+    call 85
     local.set 7
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -11741,9 +12749,9 @@
       )
     )
     local.get 1
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.tee 2
-    call 97
+    call 99
     local.tee 3
     array.len
     local.set 4
@@ -11757,26 +12765,26 @@
         br_if 1
         local.get 3
         local.get 5
-        array.get 56
+        array.get 57
         local.tee 6
         ref.is_null
         br_if 1
-        call 83
+        call 85
         local.tee 8
         local.get 6
         ref.as_non_null
-        struct.get 55 0
+        struct.get 56 0
         extern.convert_any
-        call 84
+        call 86
         local.get 8
         local.get 6
         ref.as_non_null
-        struct.get 55 1
+        struct.get 56 1
         extern.convert_any
-        call 84
+        call 86
         local.get 7
         local.get 8
-        call 84
+        call 86
         local.get 5
         i32.const 1
         i32.add
@@ -11792,7 +12800,7 @@
     local.get 0
     any.convert_extern
     local.tee 2
-    ref.test (ref 59)
+    ref.test (ref 60)
     i32.eqz
     (if
       (then
@@ -11813,26 +12821,26 @@
     )
     local.get 3
     local.get 2
-    ref.cast (ref 59)
-    struct.get 59 0
+    ref.cast (ref 60)
+    struct.get 60 0
     i32.lt_s
   )
-  (func $__object_assign (type 64)
+  (func $__object_assign (type 65)
     (local $any anyref)
-    (local $sv (ref null 59))
+    (local $sv (ref null 60))
     (local $slen i32)
     (local $si i32)
     (local $srcAny anyref)
-    (local $so (ref null 57))
-    (local $arr (ref null 56))
+    (local $so (ref null 58))
+    (local $arr (ref null 57))
     (local $cap i32)
     (local $i i32)
-    (local $e (ref null 55))
+    (local $e (ref null 56))
     (local $srcExt externref)
     local.get 1
     any.convert_extern
     local.tee 2
-    ref.test (ref 59)
+    ref.test (ref 60)
     i32.eqz
     (if
       (then
@@ -11841,9 +12849,9 @@
       )
     )
     local.get 2
-    ref.cast (ref 59)
+    ref.cast (ref 60)
     local.tee 3
-    struct.get 59 0
+    struct.get 60 0
     local.set 4
     i32.const 0
     local.set 5
@@ -11855,19 +12863,19 @@
         br_if 1
         local.get 3
         ref.as_non_null
-        struct.get 59 1
+        struct.get 60 1
         local.get 5
-        array.get 58
+        array.get 59
         local.tee 12
         any.convert_extern
         local.tee 6
-        ref.test (ref 57)
+        ref.test (ref 58)
         (if
           (then
           local.get 6
-          ref.cast (ref 57)
+          ref.cast (ref 58)
           local.tee 7
-          struct.get 57 1
+          struct.get 58 1
           local.tee 8
           array.len
           local.set 9
@@ -11881,7 +12889,7 @@
               br_if 1
               local.get 8
               local.get 10
-              array.get 56
+              array.get 57
               local.tee 11
               ref.is_null
               i32.eqz
@@ -11889,13 +12897,13 @@
                 (then
                 local.get 11
                 ref.as_non_null
-                struct.get 55 2
+                struct.get 56 2
                 i32.const 128
                 i32.and
                 i32.eqz
                 local.get 11
                 ref.as_non_null
-                struct.get 55 2
+                struct.get 56 2
                 i32.const 2
                 i32.and
                 i32.eqz
@@ -11906,13 +12914,13 @@
                   local.get 0
                   local.get 11
                   ref.as_non_null
-                  struct.get 55 0
+                  struct.get 56 0
                   extern.convert_any
                   local.get 11
                   ref.as_non_null
-                  struct.get 55 1
+                  struct.get 56 1
                   extern.convert_any
-                  call 80
+                  call 82
                   )
                 )
                 )
@@ -11935,7 +12943,7 @@
     )
     local.get 0
   )
-  (func $__object_is (type 54)
+  (func $__object_is (type 55)
     (local $aa anyref)
     (local $ba anyref)
     local.get 0
@@ -11949,46 +12957,46 @@
       )
       (else
       local.get 0
-      call 58
+      call 60
       local.get 1
-      call 58
+      call 60
       i32.and
       (if (result i32)
         (then
         local.get 0
-        call 48
+        call 50
         i64.reinterpret_f64
         local.get 1
-        call 48
+        call 50
         i64.reinterpret_f64
         i64.eq
         )
         (else
         local.get 0
-        call 59
+        call 61
         local.get 1
-        call 59
+        call 61
         i32.and
         (if (result i32)
           (then
           local.get 0
-          call 51
+          call 53
           local.get 1
-          call 51
+          call 53
           i32.eq
           )
           (else
           local.get 0
-          call 60
+          call 62
           local.get 1
-          call 60
+          call 62
           i32.and
           (if (result i32)
             (then
             local.get 0
-            call 53
+            call 55
             local.get 1
-            call 53
+            call 55
             i64.eq
             )
             (else
@@ -12045,19 +13053,19 @@
     )
   )
   (func $__defineProperty_value (param externref externref externref f64) (result externref)
-    (local $o (ref null 57))
+    (local $o (ref null 58))
     (local $any anyref)
     (local $cap i32)
     (local $load i32)
     (local $nflags i32)
     (local $hf i32)
     (local $seq i32)
-    (local $e (ref null 55))
+    (local $e (ref null 56))
     (local $efl i32)
     local.get 0
     any.convert_extern
     local.tee 5
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -12066,7 +13074,7 @@
       )
     )
     local.get 5
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.set 4
     local.get 3
     i32.trunc_f64_s
@@ -12077,14 +13085,14 @@
     local.get 4
     ref.as_non_null
     local.get 1
-    call 71
+    call 73
     local.tee 11
     ref.is_null
     (if
       (then
       local.get 4
       ref.as_non_null
-      struct.get 57 4
+      struct.get 58 4
       i32.const 1
       i32.and
       (if
@@ -12153,7 +13161,7 @@
         array.new_fixed 5 59
         struct.new 7
         extern.convert_any
-        call 52
+        call 54
         throw 0
         )
       )
@@ -12161,7 +13169,7 @@
       (else
       local.get 11
       ref.as_non_null
-      struct.get 55 2
+      struct.get 56 2
       local.tee 12
       i32.const 4
       i32.and
@@ -12278,7 +13286,7 @@
           array.new_fixed 5 90
           struct.new 7
           extern.convert_any
-          call 52
+          call 54
           throw 0
           )
         )
@@ -12395,7 +13403,7 @@
             array.new_fixed 5 88
             struct.new 7
             extern.convert_any
-            call 52
+            call 54
             throw 0
             )
           )
@@ -12511,7 +13519,7 @@
           array.new_fixed 5 98
           struct.new 7
           extern.convert_any
-          call 52
+          call 54
           throw 0
           )
         )
@@ -12641,7 +13649,7 @@
             array.new_fixed 5 100
             struct.new 7
             extern.convert_any
-            call 52
+            call 54
             throw 0
             )
           )
@@ -12655,9 +13663,9 @@
             local.get 2
             local.get 11
             ref.as_non_null
-            struct.get 55 1
+            struct.get 56 1
             extern.convert_any
-            call 106
+            call 108
             i32.eqz
             (if
               (then
@@ -12743,7 +13751,7 @@
               array.new_fixed 5 77
               struct.new 7
               extern.convert_any
-              call 52
+              call 54
               throw 0
               )
             )
@@ -12757,15 +13765,15 @@
     )
     local.get 4
     ref.as_non_null
-    struct.get 57 2
+    struct.get 58 2
     local.get 4
     ref.as_non_null
-    struct.get 57 3
+    struct.get 58 3
     i32.add
     local.set 7
     local.get 4
     ref.as_non_null
-    struct.get 57 1
+    struct.get 58 1
     array.len
     local.set 6
     local.get 7
@@ -12781,19 +13789,19 @@
       (then
       local.get 4
       ref.as_non_null
-      call 78
+      call 80
       )
     )
     local.get 4
     ref.as_non_null
-    struct.get 57 5
+    struct.get 58 5
     local.set 10
     local.get 4
     ref.as_non_null
     local.get 10
     i32.const 1
     i32.add
-    struct.set 57 5
+    struct.set 58 5
     local.get 4
     ref.as_non_null
     local.get 1
@@ -12801,22 +13809,22 @@
     any.convert_extern
     local.get 8
     local.get 10
-    call 74
+    call 76
     local.get 0
   )
   (func $__defineProperty_accessor (param externref externref externref externref f64) (result externref)
-    (local $o (ref null 57))
+    (local $o (ref null 58))
     (local $any anyref)
     (local $cap i32)
     (local $load i32)
     (local $nflags i32)
     (local $hf i32)
     (local $seq i32)
-    (local $e (ref null 55))
+    (local $e (ref null 56))
     local.get 0
     any.convert_extern
     local.tee 6
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -12825,7 +13833,7 @@
       )
     )
     local.get 6
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.set 5
     local.get 4
     i32.trunc_f64_s
@@ -12837,15 +13845,15 @@
     local.set 9
     local.get 5
     ref.as_non_null
-    struct.get 57 2
+    struct.get 58 2
     local.get 5
     ref.as_non_null
-    struct.get 57 3
+    struct.get 58 3
     i32.add
     local.set 8
     local.get 5
     ref.as_non_null
-    struct.get 57 1
+    struct.get 58 1
     array.len
     local.set 7
     local.get 8
@@ -12861,30 +13869,30 @@
       (then
       local.get 5
       ref.as_non_null
-      call 78
+      call 80
       )
     )
     local.get 5
     ref.as_non_null
-    struct.get 57 5
+    struct.get 58 5
     local.set 11
     local.get 5
     ref.as_non_null
     local.get 11
     i32.const 1
     i32.add
-    struct.set 57 5
+    struct.set 58 5
     local.get 5
     ref.as_non_null
     local.get 1
     ref.null -18
     local.get 9
     local.get 11
-    call 74
+    call 76
     local.get 5
     ref.as_non_null
     local.get 1
-    call 71
+    call 73
     local.tee 12
     ref.is_null
     i32.eqz
@@ -12894,34 +13902,34 @@
       ref.as_non_null
       local.get 2
       any.convert_extern
-      struct.set 55 4
+      struct.set 56 4
       local.get 12
       ref.as_non_null
       local.get 3
       any.convert_extern
-      struct.set 55 5
+      struct.set 56 5
       local.get 12
       ref.as_non_null
       ref.null -18
-      struct.set 55 1
+      struct.set 56 1
       )
     )
     local.get 0
   )
-  (func $__defineProperties (type 64)
+  (func $__defineProperties (type 65)
     (local $objAny anyref)
-    (local $obj (ref null 57))
+    (local $obj (ref null 58))
     (local $descsAny anyref)
-    (local $descs (ref null 57))
-    (local $ordered (ref null 56))
-    (local $gathered (ref null 56))
+    (local $descs (ref null 58))
+    (local $ordered (ref null 57))
+    (local $gathered (ref null 57))
     (local $cap i32)
     (local $i i32)
     (local $m i32)
-    (local $entry (ref null 55))
+    (local $entry (ref null 56))
     (local $rawDesc externref)
     (local $rawAny anyref)
-    (local $rawObj (ref null 57))
+    (local $rawObj (ref null 58))
     (local $flags i32)
     (local $hasData i32)
     (local $hasAccessor i32)
@@ -13017,14 +14025,14 @@
       array.new_fixed 5 79
       struct.new 7
       extern.convert_any
-      call 52
+      call 54
       throw 0
       )
     )
     local.get 0
     any.convert_extern
     local.tee 2
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -13112,12 +14120,12 @@
       array.new_fixed 5 79
       struct.new 7
       extern.convert_any
-      call 52
+      call 54
       throw 0
       )
     )
     local.get 2
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.set 3
     local.get 1
     ref.is_null
@@ -13207,14 +14215,14 @@
       array.new_fixed 5 79
       struct.new 7
       extern.convert_any
-      call 52
+      call 54
       throw 0
       )
     )
     local.get 1
     any.convert_extern
     local.tee 4
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -13302,19 +14310,19 @@
       array.new_fixed 5 79
       struct.new 7
       extern.convert_any
-      call 52
+      call 54
       throw 0
       )
     )
     local.get 4
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.tee 5
     ref.as_non_null
-    call 97
+    call 99
     local.tee 6
     array.len
     local.tee 8
-    array.new_default 56
+    array.new_default 57
     local.set 7
     i32.const 0
     local.set 10
@@ -13328,23 +14336,23 @@
         br_if 1
         local.get 6
         local.get 9
-        array.get 56
+        array.get 57
         local.tee 11
         ref.is_null
         br_if 1
         local.get 11
         ref.as_non_null
-        struct.get 55 0
+        struct.get 56 0
         extern.convert_any
         local.set 18
         local.get 11
         ref.as_non_null
-        struct.get 55 1
+        struct.get 56 1
         extern.convert_any
         local.tee 12
         any.convert_extern
         local.tee 13
-        ref.test (ref 57)
+        ref.test (ref 58)
         i32.eqz
         (if
           (then
@@ -13432,12 +14440,12 @@
           array.new_fixed 5 79
           struct.new 7
           extern.convert_any
-          call 52
+          call 54
           throw 0
           )
         )
         local.get 13
-        ref.cast (ref 57)
+        ref.cast (ref 58)
         local.set 14
         i32.const 0
         local.set 15
@@ -13462,7 +14470,7 @@
         array.new_fixed 5 5
         struct.new 7
         extern.convert_any
-        call 85
+        call 87
         (if
           (then
           i32.const 1
@@ -13482,7 +14490,7 @@
           array.new_fixed 5 5
           struct.new 7
           extern.convert_any
-          call 73
+          call 75
           local.set 19
           )
         )
@@ -13500,7 +14508,7 @@
         array.new_fixed 5 8
         struct.new 7
         extern.convert_any
-        call 85
+        call 87
         (if
           (then
           i32.const 1
@@ -13523,8 +14531,8 @@
           array.new_fixed 5 8
           struct.new 7
           extern.convert_any
-          call 73
-          call 57
+          call 75
+          call 59
           (if
             (then
             local.get 15
@@ -13551,7 +14559,7 @@
         array.new_fixed 5 10
         struct.new 7
         extern.convert_any
-        call 85
+        call 87
         (if
           (then
           local.get 15
@@ -13574,8 +14582,8 @@
           array.new_fixed 5 10
           struct.new 7
           extern.convert_any
-          call 73
-          call 57
+          call 75
+          call 59
           (if
             (then
             local.get 15
@@ -13604,7 +14612,7 @@
         array.new_fixed 5 12
         struct.new 7
         extern.convert_any
-        call 85
+        call 87
         (if
           (then
           local.get 15
@@ -13629,8 +14637,8 @@
           array.new_fixed 5 12
           struct.new 7
           extern.convert_any
-          call 73
-          call 57
+          call 75
+          call 59
           (if
             (then
             local.get 15
@@ -13650,7 +14658,7 @@
         array.new_fixed 5 3
         struct.new 7
         extern.convert_any
-        call 85
+        call 87
         (if
           (then
           i32.const 1
@@ -13664,14 +14672,14 @@
           array.new_fixed 5 3
           struct.new 7
           extern.convert_any
-          call 73
+          call 75
           local.tee 20
           ref.is_null
           i32.eqz
           (if
             (then
             local.get 20
-            call 64
+            call 66
             i32.eqz
             (if
               (then
@@ -13747,7 +14755,7 @@
               array.new_fixed 5 67
               struct.new 7
               extern.convert_any
-              call 52
+              call 54
               throw 0
               )
             )
@@ -13764,7 +14772,7 @@
         array.new_fixed 5 3
         struct.new 7
         extern.convert_any
-        call 85
+        call 87
         (if
           (then
           i32.const 1
@@ -13778,14 +14786,14 @@
           array.new_fixed 5 3
           struct.new 7
           extern.convert_any
-          call 73
+          call 75
           local.tee 21
           ref.is_null
           i32.eqz
           (if
             (then
             local.get 21
-            call 64
+            call 66
             i32.eqz
             (if
               (then
@@ -13861,7 +14869,7 @@
               array.new_fixed 5 67
               struct.new 7
               extern.convert_any
-              call 52
+              call 54
               throw 0
               )
             )
@@ -13952,7 +14960,7 @@
           array.new_fixed 5 73
           struct.new 7
           extern.convert_any
-          call 52
+          call 54
           throw 0
           )
         )
@@ -13969,7 +14977,7 @@
         local.get 10
         local.get 11
         ref.as_non_null
-        struct.get 55 0
+        struct.get 56 0
         local.get 19
         any.convert_extern
         local.get 15
@@ -13978,8 +14986,8 @@
         any.convert_extern
         local.get 21
         any.convert_extern
-        struct.new 55
-        array.set 56
+        struct.new 56
+        array.set 57
         local.get 10
         i32.const 1
         i32.add
@@ -14001,10 +15009,10 @@
         br_if 1
         local.get 7
         local.get 9
-        array.get 56
+        array.get 57
         local.tee 11
         ref.as_non_null
-        struct.get 55 2
+        struct.get 56 2
         local.tee 15
         i32.const 64
         i32.and
@@ -14013,34 +15021,34 @@
           local.get 0
           local.get 11
           ref.as_non_null
-          struct.get 55 0
+          struct.get 56 0
           extern.convert_any
           local.get 11
           ref.as_non_null
-          struct.get 55 4
+          struct.get 56 4
           extern.convert_any
           local.get 11
           ref.as_non_null
-          struct.get 55 5
+          struct.get 56 5
           extern.convert_any
           local.get 15
           f64.convert_i32_s
-          call 108
+          call 110
           drop
           )
           (else
           local.get 0
           local.get 11
           ref.as_non_null
-          struct.get 55 0
+          struct.get 56 0
           extern.convert_any
           local.get 11
           ref.as_non_null
-          struct.get 55 1
+          struct.get 56 1
           extern.convert_any
           local.get 15
           f64.convert_i32_s
-          call 107
+          call 109
           drop
           )
         )
@@ -14053,7 +15061,7 @@
     )
     local.get 0
   )
-  (func $__obj_define_from_desc (type 78)
+  (func $__obj_define_from_desc (type 79)
     (local $desc externref)
     (local $descAny anyref)
     (local $flags i32)
@@ -14064,13 +15072,13 @@
     (local $setter externref)
     local.get 0
     any.convert_extern
-    ref.test (ref 61)
+    ref.test (ref 62)
     (if
       (then
       local.get 0
       local.get 1
       local.get 2
-      call 147
+      call 149
       return
       )
     )
@@ -14085,7 +15093,7 @@
     local.get 2
     any.convert_extern
     local.tee 4
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -14143,7 +15151,7 @@
       array.new_fixed 5 49
       struct.new 7
       extern.convert_any
-      call 52
+      call 54
       throw 0
       )
     )
@@ -14172,7 +15180,7 @@
     array.new_fixed 5 5
     struct.new 7
     extern.convert_any
-    call 85
+    call 87
     (if
       (then
       i32.const 1
@@ -14188,7 +15196,7 @@
       array.new_fixed 5 5
       struct.new 7
       extern.convert_any
-      call 73
+      call 75
       local.set 8
       )
     )
@@ -14206,7 +15214,7 @@
     array.new_fixed 5 8
     struct.new 7
     extern.convert_any
-    call 85
+    call 87
     (if
       (then
       i32.const 1
@@ -14225,8 +15233,8 @@
       array.new_fixed 5 8
       struct.new 7
       extern.convert_any
-      call 73
-      call 57
+      call 75
+      call 59
       (if
         (then
         local.get 5
@@ -14253,7 +15261,7 @@
     array.new_fixed 5 10
     struct.new 7
     extern.convert_any
-    call 85
+    call 87
     (if
       (then
       local.get 3
@@ -14272,8 +15280,8 @@
       array.new_fixed 5 10
       struct.new 7
       extern.convert_any
-      call 73
-      call 57
+      call 75
+      call 59
       (if
         (then
         local.get 5
@@ -14302,7 +15310,7 @@
     array.new_fixed 5 12
     struct.new 7
     extern.convert_any
-    call 85
+    call 87
     (if
       (then
       local.get 3
@@ -14323,8 +15331,8 @@
       array.new_fixed 5 12
       struct.new 7
       extern.convert_any
-      call 73
-      call 57
+      call 75
+      call 59
       (if
         (then
         local.get 5
@@ -14344,7 +15352,7 @@
     array.new_fixed 5 3
     struct.new 7
     extern.convert_any
-    call 85
+    call 87
     (if
       (then
       i32.const 1
@@ -14358,14 +15366,14 @@
       array.new_fixed 5 3
       struct.new 7
       extern.convert_any
-      call 73
+      call 75
       local.tee 9
       ref.is_null
       i32.eqz
       (if
         (then
         local.get 9
-        call 64
+        call 66
         i32.eqz
         (if
           (then
@@ -14417,7 +15425,7 @@
           array.new_fixed 5 43
           struct.new 7
           extern.convert_any
-          call 52
+          call 54
           throw 0
           )
         )
@@ -14434,7 +15442,7 @@
     array.new_fixed 5 3
     struct.new 7
     extern.convert_any
-    call 85
+    call 87
     (if
       (then
       i32.const 1
@@ -14448,14 +15456,14 @@
       array.new_fixed 5 3
       struct.new 7
       extern.convert_any
-      call 73
+      call 75
       local.tee 10
       ref.is_null
       i32.eqz
       (if
         (then
         local.get 10
-        call 64
+        call 66
         i32.eqz
         (if
           (then
@@ -14507,7 +15515,7 @@
           array.new_fixed 5 43
           struct.new 7
           extern.convert_any
-          call 52
+          call 54
           throw 0
           )
         )
@@ -14628,7 +15636,7 @@
       array.new_fixed 5 103
       struct.new 7
       extern.convert_any
-      call 52
+      call 54
       throw 0
       )
     )
@@ -14641,7 +15649,7 @@
       local.get 10
       local.get 5
       f64.convert_i32_s
-      call 108
+      call 110
       drop
       )
       (else
@@ -14650,34 +15658,34 @@
       local.get 8
       local.get 5
       f64.convert_i32_s
-      call 107
+      call 109
       drop
       )
     )
     local.get 0
   )
-  (func $__getOwnPropertyDescriptor (type 64)
+  (func $__getOwnPropertyDescriptor (type 65)
     (local $any anyref)
-    (local $o (ref null 57))
-    (local $e (ref null 55))
+    (local $o (ref null 58))
+    (local $e (ref null 56))
     (local $fl i32)
     (local $desc externref)
     local.get 0
     any.convert_extern
-    ref.test (ref 61)
+    ref.test (ref 62)
     (if
       (then
       local.get 0
       local.get 1
       local.get 0
-      call 140
+      call 142
       return
       )
     )
     local.get 0
     any.convert_extern
     local.tee 2
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -14686,11 +15694,11 @@
       )
     )
     local.get 2
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.tee 3
     ref.as_non_null
     local.get 1
-    call 71
+    call 73
     local.tee 4
     ref.is_null
     (if
@@ -14701,9 +15709,9 @@
     )
     local.get 4
     ref.as_non_null
-    struct.get 55 2
+    struct.get 56 2
     local.set 5
-    call 70
+    call 72
     local.set 6
     local.get 5
     i32.const 8
@@ -14721,9 +15729,9 @@
       extern.convert_any
       local.get 4
       ref.as_non_null
-      struct.get 55 4
+      struct.get 56 4
       extern.convert_any
-      call 80
+      call 82
       local.get 6
       i32.const 3
       i32.const 0
@@ -14735,9 +15743,9 @@
       extern.convert_any
       local.get 4
       ref.as_non_null
-      struct.get 55 5
+      struct.get 56 5
       extern.convert_any
-      call 80
+      call 82
       )
       (else
       local.get 6
@@ -14753,9 +15761,9 @@
       extern.convert_any
       local.get 4
       ref.as_non_null
-      struct.get 55 1
+      struct.get 56 1
       extern.convert_any
-      call 80
+      call 82
       local.get 6
       i32.const 8
       i32.const 0
@@ -14772,13 +15780,13 @@
       extern.convert_any
       local.get 4
       ref.as_non_null
-      struct.get 55 2
+      struct.get 56 2
       i32.const 1
       i32.and
       i32.const 0
       i32.ne
-      call 49
-      call 80
+      call 51
+      call 82
       )
     )
     local.get 6
@@ -14799,13 +15807,13 @@
     extern.convert_any
     local.get 4
     ref.as_non_null
-    struct.get 55 2
+    struct.get 56 2
     i32.const 2
     i32.and
     i32.const 0
     i32.ne
-    call 49
-    call 80
+    call 51
+    call 82
     local.get 6
     i32.const 12
     i32.const 0
@@ -14826,40 +15834,40 @@
     extern.convert_any
     local.get 4
     ref.as_non_null
-    struct.get 55 2
+    struct.get 56 2
     i32.const 4
     i32.and
     i32.const 0
     i32.ne
-    call 49
-    call 80
+    call 51
+    call 82
     local.get 6
   )
-  (func $__getOwnPropertyNames (type 52)
+  (func $__getOwnPropertyNames (type 53)
     (local $any anyref)
-    (local $o (ref null 57))
-    (local $arr (ref null 56))
+    (local $o (ref null 58))
+    (local $arr (ref null 57))
     (local $cap i32)
     (local $i i32)
-    (local $e (ref null 55))
+    (local $e (ref null 56))
     (local $vec externref)
     local.get 0
     any.convert_extern
-    ref.test (ref 61)
+    ref.test (ref 62)
     (if
       (then
       local.get 0
       local.get 0
-      call 146
+      call 148
       return
       )
     )
-    call 83
+    call 85
     local.set 7
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 57)
+    ref.test (ref 58)
     i32.eqz
     (if
       (then
@@ -14868,9 +15876,9 @@
       )
     )
     local.get 1
-    ref.cast (ref 57)
+    ref.cast (ref 58)
     local.tee 2
-    call 98
+    call 100
     local.tee 3
     array.len
     local.set 4
@@ -14884,16 +15892,16 @@
         br_if 1
         local.get 3
         local.get 5
-        array.get 56
+        array.get 57
         local.tee 6
         ref.is_null
         br_if 1
         local.get 7
         local.get 6
         ref.as_non_null
-        struct.get 55 0
+        struct.get 56 0
         extern.convert_any
-        call 84
+        call 86
         local.get 5
         i32.const 1
         i32.add
@@ -14903,21 +15911,21 @@
     )
     local.get 7
   )
-  (func $__getOwnPropertySymbols (type 52)
-    call 83
+  (func $__getOwnPropertySymbols (type 53)
+    call 85
   )
-  (func $__object_getOwnPropertyDescriptors (type 52)
+  (func $__object_getOwnPropertyDescriptors (type 53)
     (local $names externref)
     (local $cap f64)
     (local $i i32)
     (local $key externref)
     (local $out externref)
-    call 70
+    call 72
     local.set 5
     local.get 0
-    call 112
+    call 114
     local.tee 1
-    call 100
+    call 102
     local.set 2
     i32.const 0
     local.set 3
@@ -14931,14 +15939,14 @@
         local.get 1
         local.get 3
         f64.convert_i32_s
-        call 101
+        call 103
         local.set 4
         local.get 5
         local.get 4
         local.get 0
         local.get 4
-        call 111
-        call 80
+        call 113
+        call 82
         local.get 3
         i32.const 1
         i32.add
@@ -14948,17 +15956,17 @@
     )
     local.get 5
   )
-  (func $__object_fromEntries (type 52)
+  (func $__object_fromEntries (type 53)
     (local $len f64)
     (local $i i32)
     (local $pair externref)
     (local $key externref)
     (local $val externref)
     (local $out externref)
-    call 70
+    call 72
     local.set 6
     local.get 0
-    call 100
+    call 102
     local.set 1
     i32.const 0
     local.set 2
@@ -14972,19 +15980,19 @@
         local.get 0
         local.get 2
         f64.convert_i32_s
-        call 101
+        call 103
         local.tee 3
         f64.const 0
-        call 101
+        call 103
         local.set 4
         local.get 3
         f64.const 1
-        call 101
+        call 103
         local.set 5
         local.get 6
         local.get 4
         local.get 5
-        call 80
+        call 82
         local.get 2
         i32.const 1
         i32.add
@@ -14994,17 +16002,17 @@
     )
     local.get 6
   )
-  (func $__object_isFrozen (type 47)
+  (func $__object_isFrozen (type 48)
     (local $any anyref)
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 57)
+    ref.test (ref 58)
     (if (result i32)
       (then
       local.get 1
-      ref.cast (ref 57)
-      struct.get 57 4
+      ref.cast (ref 58)
+      struct.get 58 4
       i32.const 4
       i32.and
       i32.const 0
@@ -15015,17 +16023,17 @@
       )
     )
   )
-  (func $__object_isSealed (type 47)
+  (func $__object_isSealed (type 48)
     (local $any anyref)
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 57)
+    ref.test (ref 58)
     (if (result i32)
       (then
       local.get 1
-      ref.cast (ref 57)
-      struct.get 57 4
+      ref.cast (ref 58)
+      struct.get 58 4
       i32.const 2
       i32.and
       i32.const 0
@@ -15036,29 +16044,29 @@
       )
     )
   )
-  (func $__object_isExtensible (type 47)
+  (func $__object_isExtensible (type 48)
     (local $any anyref)
     local.get 0
     any.convert_extern
-    ref.test (ref 61)
+    ref.test (ref 62)
     (if
       (then
       local.get 0
       local.get 0
-      call 143
-      call 57
+      call 145
+      call 59
       return
       )
     )
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 57)
+    ref.test (ref 58)
     (if (result i32)
       (then
       local.get 1
-      ref.cast (ref 57)
-      struct.get 57 4
+      ref.cast (ref 58)
+      struct.get 58 4
       i32.const 1
       i32.and
       i32.eqz
@@ -15068,91 +16076,91 @@
       )
     )
   )
-  (func $__object_preventExtensions (type 52)
+  (func $__object_preventExtensions (type 53)
     (local $any anyref)
-    (local $o (ref null 57))
+    (local $o (ref null 58))
     local.get 0
     any.convert_extern
-    ref.test (ref 61)
+    ref.test (ref 62)
     (if
       (then
       local.get 0
       local.get 0
-      call 144
+      call 146
       return
       )
     )
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 57)
+    ref.test (ref 58)
     (if
       (then
       local.get 1
-      ref.cast (ref 57)
+      ref.cast (ref 58)
       local.tee 2
       local.get 2
       ref.as_non_null
-      struct.get 57 4
+      struct.get 58 4
       i32.const 1
       i32.or
-      struct.set 57 4
+      struct.set 58 4
       )
     )
     local.get 0
   )
-  (func $__object_seal (type 52)
+  (func $__object_seal (type 53)
     (local $any anyref)
-    (local $o (ref null 57))
+    (local $o (ref null 58))
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 57)
+    ref.test (ref 58)
     (if
       (then
       local.get 1
-      ref.cast (ref 57)
+      ref.cast (ref 58)
       local.tee 2
       local.get 2
       ref.as_non_null
-      struct.get 57 4
+      struct.get 58 4
       i32.const 3
       i32.or
-      struct.set 57 4
+      struct.set 58 4
       )
     )
     local.get 0
   )
-  (func $__object_freeze (type 52)
+  (func $__object_freeze (type 53)
     (local $any anyref)
-    (local $o (ref null 57))
+    (local $o (ref null 58))
     local.get 0
     any.convert_extern
     local.tee 1
-    ref.test (ref 57)
+    ref.test (ref 58)
     (if
       (then
       local.get 1
-      ref.cast (ref 57)
+      ref.cast (ref 58)
       local.tee 2
       local.get 2
       ref.as_non_null
-      struct.get 57 4
+      struct.get 58 4
       i32.const 7
       i32.or
-      struct.set 57 4
+      struct.set 58 4
       )
     )
     local.get 0
   )
-  (func $__extern_is_undefined (type 47)
+  (func $__extern_is_undefined (type 48)
     local.get 0
     ref.is_null
   )
-  (func $__apply_closure (type 78)
+  (func $__apply_closure (type 79)
     (local $n i32)
     local.get 2
-    call 100
+    call 102
     i32.trunc_f64_s
     local.tee 3
     i32.const 0
@@ -15206,7 +16214,7 @@
       )
     )
   )
-  (func $__extern_method_call (type 78)
+  (func $__extern_method_call (type 79)
     (local $any anyref)
     local.get 0
     any.convert_extern
@@ -15219,297 +16227,183 @@
       )
     )
     local.get 3
-    ref.test (ref 57)
+    ref.test (ref 58)
     (if (result externref)
       (then
       local.get 0
       local.get 1
-      call 73
+      call 75
       local.get 0
-      local.get 2
-      call 123
-      )
-      (else
-      ref.null extern
-      )
-    )
-  )
-  (func $__proxy_call_get (type 79)
-    (local $vec externref)
-    call 83
-    local.tee 5
-    local.get 2
-    call 84
-    local.get 5
-    local.get 3
-    call 84
-    local.get 5
-    local.get 4
-    call 84
-    local.get 1
-    local.get 0
-    local.get 5
-    call 123
-  )
-  (func $__proxy_call_set (param externref externref externref externref externref externref) (result externref)
-    (local $vec externref)
-    call 83
-    local.tee 6
-    local.get 2
-    call 84
-    local.get 6
-    local.get 3
-    call 84
-    local.get 6
-    local.get 4
-    call 84
-    local.get 6
-    local.get 5
-    call 84
-    local.get 1
-    local.get 0
-    local.get 6
-    call 123
-  )
-  (func $__proxy_call_has (type 81)
-    (local $vec externref)
-    call 83
-    local.tee 4
-    local.get 2
-    call 84
-    local.get 4
-    local.get 3
-    call 84
-    local.get 1
-    local.get 0
-    local.get 4
-    call 123
-  )
-  (func $__proxy_call_delete (type 81)
-    (local $vec externref)
-    call 83
-    local.tee 4
-    local.get 2
-    call 84
-    local.get 4
-    local.get 3
-    call 84
-    local.get 1
-    local.get 0
-    local.get 4
-    call 123
-  )
-  (func $__proxy_call_gopd (type 81)
-    (local $vec externref)
-    call 83
-    local.tee 4
-    local.get 2
-    call 84
-    local.get 4
-    local.get 3
-    call 84
-    local.get 1
-    local.get 0
-    local.get 4
-    call 123
-  )
-  (func $__proxy_call_gpo (type 78)
-    (local $vec externref)
-    call 83
-    local.tee 3
-    local.get 2
-    call 84
-    local.get 1
-    local.get 0
-    local.get 3
-    call 123
-  )
-  (func $__proxy_call_spo (type 81)
-    (local $vec externref)
-    call 83
-    local.tee 4
-    local.get 2
-    call 84
-    local.get 4
-    local.get 3
-    call 84
-    local.get 1
-    local.get 0
-    local.get 4
-    call 123
-  )
-  (func $__proxy_call_isext (type 78)
-    (local $vec externref)
-    call 83
-    local.tee 3
-    local.get 2
-    call 84
-    local.get 1
-    local.get 0
-    local.get 3
-    call 123
-  )
-  (func $__proxy_call_prevext (type 78)
-    (local $vec externref)
-    call 83
-    local.tee 3
-    local.get 2
-    call 84
-    local.get 1
-    local.get 0
-    local.get 3
-    call 123
-  )
-  (func $__proxy_call_ownkeys (type 78)
-    (local $vec externref)
-    call 83
-    local.tee 3
-    local.get 2
-    call 84
-    local.get 1
-    local.get 0
-    local.get 3
-    call 123
-  )
-  (func $__proxy_call_define (type 79)
-    (local $vec externref)
-    call 83
-    local.tee 5
-    local.get 2
-    call 84
-    local.get 5
-    local.get 3
-    call 84
-    local.get 5
-    local.get 4
-    call 84
-    local.get 1
-    local.get 0
-    local.get 5
-    call 123
-  )
-  (func $__proxy_get_dispatch (type 78)
-    (local $p (ref null 61))
-    (local $trap externref)
-    local.get 0
-    any.convert_extern
-    ref.cast (ref 61)
-    local.tee 3
-    struct.get 61 4
-    (if
-      (then
-      i32.const 57
-      i32.const 0
-      i32.const 67
-      i32.const 97
-      i32.const 110
-      i32.const 110
-      i32.const 111
-      i32.const 116
-      i32.const 32
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 102
-      i32.const 111
-      i32.const 114
-      i32.const 109
-      i32.const 32
-      i32.const 111
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 97
-      i32.const 116
-      i32.const 105
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 97
-      i32.const 32
-      i32.const 112
-      i32.const 114
-      i32.const 111
-      i32.const 120
-      i32.const 121
-      i32.const 32
-      i32.const 116
-      i32.const 104
-      i32.const 97
-      i32.const 116
-      i32.const 32
-      i32.const 104
-      i32.const 97
-      i32.const 115
-      i32.const 32
-      i32.const 98
-      i32.const 101
-      i32.const 101
-      i32.const 110
-      i32.const 32
-      i32.const 114
-      i32.const 101
-      i32.const 118
-      i32.const 111
-      i32.const 107
-      i32.const 101
-      i32.const 100
-      array.new_fixed 5 57
-      struct.new 7
-      extern.convert_any
-      call 52
-      throw 0
-      )
-    )
-    local.get 3
-    struct.get 61 3
-    ref.is_null
-    (if (result externref)
-      (then
-      ref.null extern
-      )
-      (else
-      local.get 3
-      struct.get 61 3
-      ref.as_non_null
-      struct.get 60 0
-      )
-    )
-    local.tee 4
-    ref.is_null
-    (if (result externref)
-      (then
-      local.get 3
-      struct.get 61 1
-      extern.convert_any
-      local.get 1
-      call 73
-      )
-      (else
-      local.get 3
-      struct.get 61 2
-      extern.convert_any
-      local.get 4
-      local.get 3
-      struct.get 61 1
-      extern.convert_any
-      local.get 1
       local.get 2
       call 125
       )
+      (else
+      ref.null extern
+      )
     )
   )
-  (func $__proxy_set_dispatch (type 78)
-    (local $p (ref null 61))
+  (func $__proxy_call_get (type 80)
+    (local $vec externref)
+    call 85
+    local.tee 5
+    local.get 2
+    call 86
+    local.get 5
+    local.get 3
+    call 86
+    local.get 5
+    local.get 4
+    call 86
+    local.get 1
+    local.get 0
+    local.get 5
+    call 125
+  )
+  (func $__proxy_call_set (param externref externref externref externref externref externref) (result externref)
+    (local $vec externref)
+    call 85
+    local.tee 6
+    local.get 2
+    call 86
+    local.get 6
+    local.get 3
+    call 86
+    local.get 6
+    local.get 4
+    call 86
+    local.get 6
+    local.get 5
+    call 86
+    local.get 1
+    local.get 0
+    local.get 6
+    call 125
+  )
+  (func $__proxy_call_has (type 82)
+    (local $vec externref)
+    call 85
+    local.tee 4
+    local.get 2
+    call 86
+    local.get 4
+    local.get 3
+    call 86
+    local.get 1
+    local.get 0
+    local.get 4
+    call 125
+  )
+  (func $__proxy_call_delete (type 82)
+    (local $vec externref)
+    call 85
+    local.tee 4
+    local.get 2
+    call 86
+    local.get 4
+    local.get 3
+    call 86
+    local.get 1
+    local.get 0
+    local.get 4
+    call 125
+  )
+  (func $__proxy_call_gopd (type 82)
+    (local $vec externref)
+    call 85
+    local.tee 4
+    local.get 2
+    call 86
+    local.get 4
+    local.get 3
+    call 86
+    local.get 1
+    local.get 0
+    local.get 4
+    call 125
+  )
+  (func $__proxy_call_gpo (type 79)
+    (local $vec externref)
+    call 85
+    local.tee 3
+    local.get 2
+    call 86
+    local.get 1
+    local.get 0
+    local.get 3
+    call 125
+  )
+  (func $__proxy_call_spo (type 82)
+    (local $vec externref)
+    call 85
+    local.tee 4
+    local.get 2
+    call 86
+    local.get 4
+    local.get 3
+    call 86
+    local.get 1
+    local.get 0
+    local.get 4
+    call 125
+  )
+  (func $__proxy_call_isext (type 79)
+    (local $vec externref)
+    call 85
+    local.tee 3
+    local.get 2
+    call 86
+    local.get 1
+    local.get 0
+    local.get 3
+    call 125
+  )
+  (func $__proxy_call_prevext (type 79)
+    (local $vec externref)
+    call 85
+    local.tee 3
+    local.get 2
+    call 86
+    local.get 1
+    local.get 0
+    local.get 3
+    call 125
+  )
+  (func $__proxy_call_ownkeys (type 79)
+    (local $vec externref)
+    call 85
+    local.tee 3
+    local.get 2
+    call 86
+    local.get 1
+    local.get 0
+    local.get 3
+    call 125
+  )
+  (func $__proxy_call_define (type 80)
+    (local $vec externref)
+    call 85
+    local.tee 5
+    local.get 2
+    call 86
+    local.get 5
+    local.get 3
+    call 86
+    local.get 5
+    local.get 4
+    call 86
+    local.get 1
+    local.get 0
+    local.get 5
+    call 125
+  )
+  (func $__proxy_get_dispatch (type 79)
+    (local $p (ref null 62))
     (local $trap externref)
     local.get 0
     any.convert_extern
-    ref.cast (ref 61)
+    ref.cast (ref 62)
     local.tee 3
-    struct.get 61 4
+    struct.get 62 4
     (if
       (then
       i32.const 57
@@ -15574,12 +16468,12 @@
       array.new_fixed 5 57
       struct.new 7
       extern.convert_any
-      call 52
+      call 54
       throw 0
       )
     )
     local.get 3
-    struct.get 61 3
+    struct.get 62 3
     ref.is_null
     (if (result externref)
       (then
@@ -15587,9 +16481,9 @@
       )
       (else
       local.get 3
-      struct.get 61 3
+      struct.get 62 3
       ref.as_non_null
-      struct.get 60 1
+      struct.get 61 0
       )
     )
     local.tee 4
@@ -15597,150 +16491,33 @@
     (if (result externref)
       (then
       local.get 3
-      struct.get 61 1
+      struct.get 62 1
       extern.convert_any
       local.get 1
-      local.get 2
-      call 80
-      ref.null extern
+      call 75
       )
       (else
       local.get 3
-      struct.get 61 2
+      struct.get 62 2
       extern.convert_any
       local.get 4
       local.get 3
-      struct.get 61 1
+      struct.get 62 1
       extern.convert_any
       local.get 1
       local.get 2
-      local.get 0
-      call 126
-      )
-    )
-  )
-  (func $__proxy_has_dispatch (type 78)
-    (local $p (ref null 61))
-    (local $trap externref)
-    local.get 0
-    any.convert_extern
-    ref.cast (ref 61)
-    local.tee 3
-    struct.get 61 4
-    (if
-      (then
-      i32.const 57
-      i32.const 0
-      i32.const 67
-      i32.const 97
-      i32.const 110
-      i32.const 110
-      i32.const 111
-      i32.const 116
-      i32.const 32
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 102
-      i32.const 111
-      i32.const 114
-      i32.const 109
-      i32.const 32
-      i32.const 111
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 97
-      i32.const 116
-      i32.const 105
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 97
-      i32.const 32
-      i32.const 112
-      i32.const 114
-      i32.const 111
-      i32.const 120
-      i32.const 121
-      i32.const 32
-      i32.const 116
-      i32.const 104
-      i32.const 97
-      i32.const 116
-      i32.const 32
-      i32.const 104
-      i32.const 97
-      i32.const 115
-      i32.const 32
-      i32.const 98
-      i32.const 101
-      i32.const 101
-      i32.const 110
-      i32.const 32
-      i32.const 114
-      i32.const 101
-      i32.const 118
-      i32.const 111
-      i32.const 107
-      i32.const 101
-      i32.const 100
-      array.new_fixed 5 57
-      struct.new 7
-      extern.convert_any
-      call 52
-      throw 0
-      )
-    )
-    local.get 3
-    struct.get 61 3
-    ref.is_null
-    (if (result externref)
-      (then
-      ref.null extern
-      )
-      (else
-      local.get 3
-      struct.get 61 3
-      ref.as_non_null
-      struct.get 60 2
-      )
-    )
-    local.tee 4
-    ref.is_null
-    (if (result externref)
-      (then
-      local.get 3
-      struct.get 61 1
-      extern.convert_any
-      local.get 1
-      call 88
-      call 49
-      )
-      (else
-      local.get 3
-      struct.get 61 2
-      extern.convert_any
-      local.get 4
-      local.get 3
-      struct.get 61 1
-      extern.convert_any
-      local.get 1
       call 127
       )
     )
   )
-  (func $__proxy_delete_dispatch (type 78)
-    (local $p (ref null 61))
+  (func $__proxy_set_dispatch (type 79)
+    (local $p (ref null 62))
     (local $trap externref)
     local.get 0
     any.convert_extern
-    ref.cast (ref 61)
+    ref.cast (ref 62)
     local.tee 3
-    struct.get 61 4
+    struct.get 62 4
     (if
       (then
       i32.const 57
@@ -15805,12 +16582,12 @@
       array.new_fixed 5 57
       struct.new 7
       extern.convert_any
-      call 52
+      call 54
       throw 0
       )
     )
     local.get 3
-    struct.get 61 3
+    struct.get 62 3
     ref.is_null
     (if (result externref)
       (then
@@ -15818,9 +16595,9 @@
       )
       (else
       local.get 3
-      struct.get 61 3
+      struct.get 62 3
       ref.as_non_null
-      struct.get 60 4
+      struct.get 61 1
       )
     )
     local.tee 4
@@ -15828,33 +16605,36 @@
     (if (result externref)
       (then
       local.get 3
-      struct.get 61 1
+      struct.get 62 1
       extern.convert_any
       local.get 1
+      local.get 2
       call 82
-      call 49
+      ref.null extern
       )
       (else
       local.get 3
-      struct.get 61 2
+      struct.get 62 2
       extern.convert_any
       local.get 4
       local.get 3
-      struct.get 61 1
+      struct.get 62 1
       extern.convert_any
       local.get 1
+      local.get 2
+      local.get 0
       call 128
       )
     )
   )
-  (func $__proxy_gopd_dispatch (type 78)
-    (local $p (ref null 61))
+  (func $__proxy_has_dispatch (type 79)
+    (local $p (ref null 62))
     (local $trap externref)
     local.get 0
     any.convert_extern
-    ref.cast (ref 61)
+    ref.cast (ref 62)
     local.tee 3
-    struct.get 61 4
+    struct.get 62 4
     (if
       (then
       i32.const 57
@@ -15919,12 +16699,12 @@
       array.new_fixed 5 57
       struct.new 7
       extern.convert_any
-      call 52
+      call 54
       throw 0
       )
     )
     local.get 3
-    struct.get 61 3
+    struct.get 62 3
     ref.is_null
     (if (result externref)
       (then
@@ -15932,9 +16712,9 @@
       )
       (else
       local.get 3
-      struct.get 61 3
+      struct.get 62 3
       ref.as_non_null
-      struct.get 60 5
+      struct.get 61 2
       )
     )
     local.tee 4
@@ -15942,32 +16722,33 @@
     (if (result externref)
       (then
       local.get 3
-      struct.get 61 1
+      struct.get 62 1
       extern.convert_any
       local.get 1
-      call 111
+      call 90
+      call 51
       )
       (else
       local.get 3
-      struct.get 61 2
+      struct.get 62 2
       extern.convert_any
       local.get 4
       local.get 3
-      struct.get 61 1
+      struct.get 62 1
       extern.convert_any
       local.get 1
       call 129
       )
     )
   )
-  (func $__proxy_gpo_dispatch (type 64)
-    (local $p (ref null 61))
+  (func $__proxy_delete_dispatch (type 79)
+    (local $p (ref null 62))
     (local $trap externref)
     local.get 0
     any.convert_extern
-    ref.cast (ref 61)
-    local.tee 2
-    struct.get 61 4
+    ref.cast (ref 62)
+    local.tee 3
+    struct.get 62 4
     (if
       (then
       i32.const 57
@@ -16032,817 +16813,12 @@
       array.new_fixed 5 57
       struct.new 7
       extern.convert_any
-      call 52
-      throw 0
-      )
-    )
-    local.get 2
-    struct.get 61 3
-    ref.is_null
-    (if (result externref)
-      (then
-      ref.null extern
-      )
-      (else
-      local.get 2
-      struct.get 61 3
-      ref.as_non_null
-      struct.get 60 6
-      )
-    )
-    local.tee 3
-    ref.is_null
-    (if (result externref)
-      (then
-      local.get 2
-      struct.get 61 1
-      extern.convert_any
-      call 92
-      )
-      (else
-      local.get 2
-      struct.get 61 2
-      extern.convert_any
-      local.get 3
-      local.get 2
-      struct.get 61 1
-      extern.convert_any
-      call 130
-      )
-    )
-  )
-  (func $__proxy_spo_dispatch (type 64)
-    (local $p (ref null 61))
-    (local $trap externref)
-    local.get 0
-    any.convert_extern
-    ref.cast (ref 61)
-    local.tee 2
-    struct.get 61 4
-    (if
-      (then
-      i32.const 57
-      i32.const 0
-      i32.const 67
-      i32.const 97
-      i32.const 110
-      i32.const 110
-      i32.const 111
-      i32.const 116
-      i32.const 32
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 102
-      i32.const 111
-      i32.const 114
-      i32.const 109
-      i32.const 32
-      i32.const 111
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 97
-      i32.const 116
-      i32.const 105
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 97
-      i32.const 32
-      i32.const 112
-      i32.const 114
-      i32.const 111
-      i32.const 120
-      i32.const 121
-      i32.const 32
-      i32.const 116
-      i32.const 104
-      i32.const 97
-      i32.const 116
-      i32.const 32
-      i32.const 104
-      i32.const 97
-      i32.const 115
-      i32.const 32
-      i32.const 98
-      i32.const 101
-      i32.const 101
-      i32.const 110
-      i32.const 32
-      i32.const 114
-      i32.const 101
-      i32.const 118
-      i32.const 111
-      i32.const 107
-      i32.const 101
-      i32.const 100
-      array.new_fixed 5 57
-      struct.new 7
-      extern.convert_any
-      call 52
-      throw 0
-      )
-    )
-    local.get 2
-    struct.get 61 3
-    ref.is_null
-    (if (result externref)
-      (then
-      ref.null extern
-      )
-      (else
-      local.get 2
-      struct.get 61 3
-      ref.as_non_null
-      struct.get 60 7
-      )
-    )
-    local.tee 3
-    ref.is_null
-    (if (result externref)
-      (then
-      local.get 2
-      struct.get 61 1
-      extern.convert_any
-      local.get 1
-      call 94
-      drop
-      local.get 0
-      )
-      (else
-      local.get 2
-      struct.get 61 2
-      extern.convert_any
-      local.get 3
-      local.get 2
-      struct.get 61 1
-      extern.convert_any
-      local.get 1
-      call 131
-      )
-    )
-  )
-  (func $__proxy_isext_dispatch (type 64)
-    (local $p (ref null 61))
-    (local $trap externref)
-    local.get 0
-    any.convert_extern
-    ref.cast (ref 61)
-    local.tee 2
-    struct.get 61 4
-    (if
-      (then
-      i32.const 57
-      i32.const 0
-      i32.const 67
-      i32.const 97
-      i32.const 110
-      i32.const 110
-      i32.const 111
-      i32.const 116
-      i32.const 32
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 102
-      i32.const 111
-      i32.const 114
-      i32.const 109
-      i32.const 32
-      i32.const 111
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 97
-      i32.const 116
-      i32.const 105
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 97
-      i32.const 32
-      i32.const 112
-      i32.const 114
-      i32.const 111
-      i32.const 120
-      i32.const 121
-      i32.const 32
-      i32.const 116
-      i32.const 104
-      i32.const 97
-      i32.const 116
-      i32.const 32
-      i32.const 104
-      i32.const 97
-      i32.const 115
-      i32.const 32
-      i32.const 98
-      i32.const 101
-      i32.const 101
-      i32.const 110
-      i32.const 32
-      i32.const 114
-      i32.const 101
-      i32.const 118
-      i32.const 111
-      i32.const 107
-      i32.const 101
-      i32.const 100
-      array.new_fixed 5 57
-      struct.new 7
-      extern.convert_any
-      call 52
-      throw 0
-      )
-    )
-    local.get 2
-    struct.get 61 3
-    ref.is_null
-    (if (result externref)
-      (then
-      ref.null extern
-      )
-      (else
-      local.get 2
-      struct.get 61 3
-      ref.as_non_null
-      struct.get 60 8
-      )
-    )
-    local.tee 3
-    ref.is_null
-    (if (result externref)
-      (then
-      local.get 2
-      struct.get 61 1
-      extern.convert_any
-      call 118
-      call 49
-      )
-      (else
-      local.get 2
-      struct.get 61 2
-      extern.convert_any
-      local.get 3
-      local.get 2
-      struct.get 61 1
-      extern.convert_any
-      call 132
-      )
-    )
-  )
-  (func $__proxy_prevext_dispatch (type 64)
-    (local $p (ref null 61))
-    (local $trap externref)
-    local.get 0
-    any.convert_extern
-    ref.cast (ref 61)
-    local.tee 2
-    struct.get 61 4
-    (if
-      (then
-      i32.const 57
-      i32.const 0
-      i32.const 67
-      i32.const 97
-      i32.const 110
-      i32.const 110
-      i32.const 111
-      i32.const 116
-      i32.const 32
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 102
-      i32.const 111
-      i32.const 114
-      i32.const 109
-      i32.const 32
-      i32.const 111
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 97
-      i32.const 116
-      i32.const 105
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 97
-      i32.const 32
-      i32.const 112
-      i32.const 114
-      i32.const 111
-      i32.const 120
-      i32.const 121
-      i32.const 32
-      i32.const 116
-      i32.const 104
-      i32.const 97
-      i32.const 116
-      i32.const 32
-      i32.const 104
-      i32.const 97
-      i32.const 115
-      i32.const 32
-      i32.const 98
-      i32.const 101
-      i32.const 101
-      i32.const 110
-      i32.const 32
-      i32.const 114
-      i32.const 101
-      i32.const 118
-      i32.const 111
-      i32.const 107
-      i32.const 101
-      i32.const 100
-      array.new_fixed 5 57
-      struct.new 7
-      extern.convert_any
-      call 52
-      throw 0
-      )
-    )
-    local.get 2
-    struct.get 61 3
-    ref.is_null
-    (if (result externref)
-      (then
-      ref.null extern
-      )
-      (else
-      local.get 2
-      struct.get 61 3
-      ref.as_non_null
-      struct.get 60 9
-      )
-    )
-    local.tee 3
-    ref.is_null
-    (if (result externref)
-      (then
-      local.get 2
-      struct.get 61 1
-      extern.convert_any
-      call 119
-      drop
-      local.get 0
-      )
-      (else
-      local.get 2
-      struct.get 61 2
-      extern.convert_any
-      local.get 3
-      local.get 2
-      struct.get 61 1
-      extern.convert_any
-      call 133
-      )
-    )
-  )
-  (func $__proxy_ownkeys_keys_dispatch (type 64)
-    (local $p (ref null 61))
-    (local $trap externref)
-    local.get 0
-    any.convert_extern
-    ref.cast (ref 61)
-    local.tee 2
-    struct.get 61 4
-    (if
-      (then
-      i32.const 57
-      i32.const 0
-      i32.const 67
-      i32.const 97
-      i32.const 110
-      i32.const 110
-      i32.const 111
-      i32.const 116
-      i32.const 32
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 102
-      i32.const 111
-      i32.const 114
-      i32.const 109
-      i32.const 32
-      i32.const 111
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 97
-      i32.const 116
-      i32.const 105
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 97
-      i32.const 32
-      i32.const 112
-      i32.const 114
-      i32.const 111
-      i32.const 120
-      i32.const 121
-      i32.const 32
-      i32.const 116
-      i32.const 104
-      i32.const 97
-      i32.const 116
-      i32.const 32
-      i32.const 104
-      i32.const 97
-      i32.const 115
-      i32.const 32
-      i32.const 98
-      i32.const 101
-      i32.const 101
-      i32.const 110
-      i32.const 32
-      i32.const 114
-      i32.const 101
-      i32.const 118
-      i32.const 111
-      i32.const 107
-      i32.const 101
-      i32.const 100
-      array.new_fixed 5 57
-      struct.new 7
-      extern.convert_any
-      call 52
-      throw 0
-      )
-    )
-    local.get 2
-    struct.get 61 3
-    ref.is_null
-    (if (result externref)
-      (then
-      ref.null extern
-      )
-      (else
-      local.get 2
-      struct.get 61 3
-      ref.as_non_null
-      struct.get 60 10
-      )
-    )
-    local.tee 3
-    ref.is_null
-    (if (result externref)
-      (then
-      local.get 2
-      struct.get 61 1
-      extern.convert_any
-      call 99
-      )
-      (else
-      local.get 2
-      struct.get 61 2
-      extern.convert_any
-      local.get 3
-      local.get 2
-      struct.get 61 1
-      extern.convert_any
-      call 134
-      local.tee 3
-      ref.is_null
-      local.get 3
-      call 58
-      i32.or
-      local.get 3
-      call 59
-      i32.or
-      local.get 3
-      call 61
-      i32.or
-      (if
-        (then
-        i32.const 43
-        i32.const 0
-        i32.const 80
-        i32.const 114
-        i32.const 111
-        i32.const 120
-        i32.const 121
-        i32.const 32
-        i32.const 111
-        i32.const 119
-        i32.const 110
-        i32.const 75
-        i32.const 101
-        i32.const 121
-        i32.const 115
-        i32.const 32
-        i32.const 116
-        i32.const 114
-        i32.const 97
-        i32.const 112
-        i32.const 32
-        i32.const 114
-        i32.const 101
-        i32.const 115
-        i32.const 117
-        i32.const 108
-        i32.const 116
-        i32.const 32
-        i32.const 109
-        i32.const 117
-        i32.const 115
-        i32.const 116
-        i32.const 32
-        i32.const 98
-        i32.const 101
-        i32.const 32
-        i32.const 97
-        i32.const 110
-        i32.const 32
-        i32.const 111
-        i32.const 98
-        i32.const 106
-        i32.const 101
-        i32.const 99
-        i32.const 116
-        array.new_fixed 5 43
-        struct.new 7
-        extern.convert_any
-        call 52
-        throw 0
-        )
-      )
-      local.get 3
-      )
-    )
-  )
-  (func $__proxy_ownkeys_names_dispatch (type 64)
-    (local $p (ref null 61))
-    (local $trap externref)
-    local.get 0
-    any.convert_extern
-    ref.cast (ref 61)
-    local.tee 2
-    struct.get 61 4
-    (if
-      (then
-      i32.const 57
-      i32.const 0
-      i32.const 67
-      i32.const 97
-      i32.const 110
-      i32.const 110
-      i32.const 111
-      i32.const 116
-      i32.const 32
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 102
-      i32.const 111
-      i32.const 114
-      i32.const 109
-      i32.const 32
-      i32.const 111
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 97
-      i32.const 116
-      i32.const 105
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 97
-      i32.const 32
-      i32.const 112
-      i32.const 114
-      i32.const 111
-      i32.const 120
-      i32.const 121
-      i32.const 32
-      i32.const 116
-      i32.const 104
-      i32.const 97
-      i32.const 116
-      i32.const 32
-      i32.const 104
-      i32.const 97
-      i32.const 115
-      i32.const 32
-      i32.const 98
-      i32.const 101
-      i32.const 101
-      i32.const 110
-      i32.const 32
-      i32.const 114
-      i32.const 101
-      i32.const 118
-      i32.const 111
-      i32.const 107
-      i32.const 101
-      i32.const 100
-      array.new_fixed 5 57
-      struct.new 7
-      extern.convert_any
-      call 52
-      throw 0
-      )
-    )
-    local.get 2
-    struct.get 61 3
-    ref.is_null
-    (if (result externref)
-      (then
-      ref.null extern
-      )
-      (else
-      local.get 2
-      struct.get 61 3
-      ref.as_non_null
-      struct.get 60 10
-      )
-    )
-    local.tee 3
-    ref.is_null
-    (if (result externref)
-      (then
-      local.get 2
-      struct.get 61 1
-      extern.convert_any
-      call 112
-      )
-      (else
-      local.get 2
-      struct.get 61 2
-      extern.convert_any
-      local.get 3
-      local.get 2
-      struct.get 61 1
-      extern.convert_any
-      call 134
-      local.tee 3
-      ref.is_null
-      local.get 3
-      call 58
-      i32.or
-      local.get 3
-      call 59
-      i32.or
-      local.get 3
-      call 61
-      i32.or
-      (if
-        (then
-        i32.const 43
-        i32.const 0
-        i32.const 80
-        i32.const 114
-        i32.const 111
-        i32.const 120
-        i32.const 121
-        i32.const 32
-        i32.const 111
-        i32.const 119
-        i32.const 110
-        i32.const 75
-        i32.const 101
-        i32.const 121
-        i32.const 115
-        i32.const 32
-        i32.const 116
-        i32.const 114
-        i32.const 97
-        i32.const 112
-        i32.const 32
-        i32.const 114
-        i32.const 101
-        i32.const 115
-        i32.const 117
-        i32.const 108
-        i32.const 116
-        i32.const 32
-        i32.const 109
-        i32.const 117
-        i32.const 115
-        i32.const 116
-        i32.const 32
-        i32.const 98
-        i32.const 101
-        i32.const 32
-        i32.const 97
-        i32.const 110
-        i32.const 32
-        i32.const 111
-        i32.const 98
-        i32.const 106
-        i32.const 101
-        i32.const 99
-        i32.const 116
-        array.new_fixed 5 43
-        struct.new 7
-        extern.convert_any
-        call 52
-        throw 0
-        )
-      )
-      local.get 3
-      )
-    )
-  )
-  (func $__proxy_define_dispatch (type 78)
-    (local $p (ref null 61))
-    (local $trap externref)
-    local.get 0
-    any.convert_extern
-    ref.cast (ref 61)
-    local.tee 3
-    struct.get 61 4
-    (if
-      (then
-      i32.const 57
-      i32.const 0
-      i32.const 67
-      i32.const 97
-      i32.const 110
-      i32.const 110
-      i32.const 111
-      i32.const 116
-      i32.const 32
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 102
-      i32.const 111
-      i32.const 114
-      i32.const 109
-      i32.const 32
-      i32.const 111
-      i32.const 112
-      i32.const 101
-      i32.const 114
-      i32.const 97
-      i32.const 116
-      i32.const 105
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 111
-      i32.const 110
-      i32.const 32
-      i32.const 97
-      i32.const 32
-      i32.const 112
-      i32.const 114
-      i32.const 111
-      i32.const 120
-      i32.const 121
-      i32.const 32
-      i32.const 116
-      i32.const 104
-      i32.const 97
-      i32.const 116
-      i32.const 32
-      i32.const 104
-      i32.const 97
-      i32.const 115
-      i32.const 32
-      i32.const 98
-      i32.const 101
-      i32.const 101
-      i32.const 110
-      i32.const 32
-      i32.const 114
-      i32.const 101
-      i32.const 118
-      i32.const 111
-      i32.const 107
-      i32.const 101
-      i32.const 100
-      array.new_fixed 5 57
-      struct.new 7
-      extern.convert_any
-      call 52
+      call 54
       throw 0
       )
     )
     local.get 3
-    struct.get 61 3
+    struct.get 62 3
     ref.is_null
     (if (result externref)
       (then
@@ -16850,9 +16826,9 @@
       )
       (else
       local.get 3
-      struct.get 61 3
+      struct.get 62 3
       ref.as_non_null
-      struct.get 60 11
+      struct.get 61 4
       )
     )
     local.tee 4
@@ -16860,27 +16836,1059 @@
     (if (result externref)
       (then
       local.get 3
-      struct.get 61 1
+      struct.get 62 1
       extern.convert_any
       local.get 1
-      local.get 2
-      call 110
+      call 84
+      call 51
       )
       (else
       local.get 3
-      struct.get 61 2
+      struct.get 62 2
       extern.convert_any
       local.get 4
       local.get 3
-      struct.get 61 1
+      struct.get 62 1
       extern.convert_any
       local.get 1
+      call 130
+      )
+    )
+  )
+  (func $__proxy_gopd_dispatch (type 79)
+    (local $p (ref null 62))
+    (local $trap externref)
+    local.get 0
+    any.convert_extern
+    ref.cast (ref 62)
+    local.tee 3
+    struct.get 62 4
+    (if
+      (then
+      i32.const 57
+      i32.const 0
+      i32.const 67
+      i32.const 97
+      i32.const 110
+      i32.const 110
+      i32.const 111
+      i32.const 116
+      i32.const 32
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 102
+      i32.const 111
+      i32.const 114
+      i32.const 109
+      i32.const 32
+      i32.const 111
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 97
+      i32.const 116
+      i32.const 105
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 97
+      i32.const 32
+      i32.const 112
+      i32.const 114
+      i32.const 111
+      i32.const 120
+      i32.const 121
+      i32.const 32
+      i32.const 116
+      i32.const 104
+      i32.const 97
+      i32.const 116
+      i32.const 32
+      i32.const 104
+      i32.const 97
+      i32.const 115
+      i32.const 32
+      i32.const 98
+      i32.const 101
+      i32.const 101
+      i32.const 110
+      i32.const 32
+      i32.const 114
+      i32.const 101
+      i32.const 118
+      i32.const 111
+      i32.const 107
+      i32.const 101
+      i32.const 100
+      array.new_fixed 5 57
+      struct.new 7
+      extern.convert_any
+      call 54
+      throw 0
+      )
+    )
+    local.get 3
+    struct.get 62 3
+    ref.is_null
+    (if (result externref)
+      (then
+      ref.null extern
+      )
+      (else
+      local.get 3
+      struct.get 62 3
+      ref.as_non_null
+      struct.get 61 5
+      )
+    )
+    local.tee 4
+    ref.is_null
+    (if (result externref)
+      (then
+      local.get 3
+      struct.get 62 1
+      extern.convert_any
+      local.get 1
+      call 113
+      )
+      (else
+      local.get 3
+      struct.get 62 2
+      extern.convert_any
+      local.get 4
+      local.get 3
+      struct.get 62 1
+      extern.convert_any
+      local.get 1
+      call 131
+      )
+    )
+  )
+  (func $__proxy_gpo_dispatch (type 65)
+    (local $p (ref null 62))
+    (local $trap externref)
+    local.get 0
+    any.convert_extern
+    ref.cast (ref 62)
+    local.tee 2
+    struct.get 62 4
+    (if
+      (then
+      i32.const 57
+      i32.const 0
+      i32.const 67
+      i32.const 97
+      i32.const 110
+      i32.const 110
+      i32.const 111
+      i32.const 116
+      i32.const 32
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 102
+      i32.const 111
+      i32.const 114
+      i32.const 109
+      i32.const 32
+      i32.const 111
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 97
+      i32.const 116
+      i32.const 105
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 97
+      i32.const 32
+      i32.const 112
+      i32.const 114
+      i32.const 111
+      i32.const 120
+      i32.const 121
+      i32.const 32
+      i32.const 116
+      i32.const 104
+      i32.const 97
+      i32.const 116
+      i32.const 32
+      i32.const 104
+      i32.const 97
+      i32.const 115
+      i32.const 32
+      i32.const 98
+      i32.const 101
+      i32.const 101
+      i32.const 110
+      i32.const 32
+      i32.const 114
+      i32.const 101
+      i32.const 118
+      i32.const 111
+      i32.const 107
+      i32.const 101
+      i32.const 100
+      array.new_fixed 5 57
+      struct.new 7
+      extern.convert_any
+      call 54
+      throw 0
+      )
+    )
+    local.get 2
+    struct.get 62 3
+    ref.is_null
+    (if (result externref)
+      (then
+      ref.null extern
+      )
+      (else
       local.get 2
+      struct.get 62 3
+      ref.as_non_null
+      struct.get 61 6
+      )
+    )
+    local.tee 3
+    ref.is_null
+    (if (result externref)
+      (then
+      local.get 2
+      struct.get 62 1
+      extern.convert_any
+      call 94
+      )
+      (else
+      local.get 2
+      struct.get 62 2
+      extern.convert_any
+      local.get 3
+      local.get 2
+      struct.get 62 1
+      extern.convert_any
+      call 132
+      )
+    )
+  )
+  (func $__proxy_spo_dispatch (type 65)
+    (local $p (ref null 62))
+    (local $trap externref)
+    local.get 0
+    any.convert_extern
+    ref.cast (ref 62)
+    local.tee 2
+    struct.get 62 4
+    (if
+      (then
+      i32.const 57
+      i32.const 0
+      i32.const 67
+      i32.const 97
+      i32.const 110
+      i32.const 110
+      i32.const 111
+      i32.const 116
+      i32.const 32
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 102
+      i32.const 111
+      i32.const 114
+      i32.const 109
+      i32.const 32
+      i32.const 111
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 97
+      i32.const 116
+      i32.const 105
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 97
+      i32.const 32
+      i32.const 112
+      i32.const 114
+      i32.const 111
+      i32.const 120
+      i32.const 121
+      i32.const 32
+      i32.const 116
+      i32.const 104
+      i32.const 97
+      i32.const 116
+      i32.const 32
+      i32.const 104
+      i32.const 97
+      i32.const 115
+      i32.const 32
+      i32.const 98
+      i32.const 101
+      i32.const 101
+      i32.const 110
+      i32.const 32
+      i32.const 114
+      i32.const 101
+      i32.const 118
+      i32.const 111
+      i32.const 107
+      i32.const 101
+      i32.const 100
+      array.new_fixed 5 57
+      struct.new 7
+      extern.convert_any
+      call 54
+      throw 0
+      )
+    )
+    local.get 2
+    struct.get 62 3
+    ref.is_null
+    (if (result externref)
+      (then
+      ref.null extern
+      )
+      (else
+      local.get 2
+      struct.get 62 3
+      ref.as_non_null
+      struct.get 61 7
+      )
+    )
+    local.tee 3
+    ref.is_null
+    (if (result externref)
+      (then
+      local.get 2
+      struct.get 62 1
+      extern.convert_any
+      local.get 1
+      call 96
+      drop
+      local.get 0
+      )
+      (else
+      local.get 2
+      struct.get 62 2
+      extern.convert_any
+      local.get 3
+      local.get 2
+      struct.get 62 1
+      extern.convert_any
+      local.get 1
+      call 133
+      )
+    )
+  )
+  (func $__proxy_isext_dispatch (type 65)
+    (local $p (ref null 62))
+    (local $trap externref)
+    local.get 0
+    any.convert_extern
+    ref.cast (ref 62)
+    local.tee 2
+    struct.get 62 4
+    (if
+      (then
+      i32.const 57
+      i32.const 0
+      i32.const 67
+      i32.const 97
+      i32.const 110
+      i32.const 110
+      i32.const 111
+      i32.const 116
+      i32.const 32
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 102
+      i32.const 111
+      i32.const 114
+      i32.const 109
+      i32.const 32
+      i32.const 111
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 97
+      i32.const 116
+      i32.const 105
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 97
+      i32.const 32
+      i32.const 112
+      i32.const 114
+      i32.const 111
+      i32.const 120
+      i32.const 121
+      i32.const 32
+      i32.const 116
+      i32.const 104
+      i32.const 97
+      i32.const 116
+      i32.const 32
+      i32.const 104
+      i32.const 97
+      i32.const 115
+      i32.const 32
+      i32.const 98
+      i32.const 101
+      i32.const 101
+      i32.const 110
+      i32.const 32
+      i32.const 114
+      i32.const 101
+      i32.const 118
+      i32.const 111
+      i32.const 107
+      i32.const 101
+      i32.const 100
+      array.new_fixed 5 57
+      struct.new 7
+      extern.convert_any
+      call 54
+      throw 0
+      )
+    )
+    local.get 2
+    struct.get 62 3
+    ref.is_null
+    (if (result externref)
+      (then
+      ref.null extern
+      )
+      (else
+      local.get 2
+      struct.get 62 3
+      ref.as_non_null
+      struct.get 61 8
+      )
+    )
+    local.tee 3
+    ref.is_null
+    (if (result externref)
+      (then
+      local.get 2
+      struct.get 62 1
+      extern.convert_any
+      call 120
+      call 51
+      )
+      (else
+      local.get 2
+      struct.get 62 2
+      extern.convert_any
+      local.get 3
+      local.get 2
+      struct.get 62 1
+      extern.convert_any
+      call 134
+      )
+    )
+  )
+  (func $__proxy_prevext_dispatch (type 65)
+    (local $p (ref null 62))
+    (local $trap externref)
+    local.get 0
+    any.convert_extern
+    ref.cast (ref 62)
+    local.tee 2
+    struct.get 62 4
+    (if
+      (then
+      i32.const 57
+      i32.const 0
+      i32.const 67
+      i32.const 97
+      i32.const 110
+      i32.const 110
+      i32.const 111
+      i32.const 116
+      i32.const 32
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 102
+      i32.const 111
+      i32.const 114
+      i32.const 109
+      i32.const 32
+      i32.const 111
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 97
+      i32.const 116
+      i32.const 105
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 97
+      i32.const 32
+      i32.const 112
+      i32.const 114
+      i32.const 111
+      i32.const 120
+      i32.const 121
+      i32.const 32
+      i32.const 116
+      i32.const 104
+      i32.const 97
+      i32.const 116
+      i32.const 32
+      i32.const 104
+      i32.const 97
+      i32.const 115
+      i32.const 32
+      i32.const 98
+      i32.const 101
+      i32.const 101
+      i32.const 110
+      i32.const 32
+      i32.const 114
+      i32.const 101
+      i32.const 118
+      i32.const 111
+      i32.const 107
+      i32.const 101
+      i32.const 100
+      array.new_fixed 5 57
+      struct.new 7
+      extern.convert_any
+      call 54
+      throw 0
+      )
+    )
+    local.get 2
+    struct.get 62 3
+    ref.is_null
+    (if (result externref)
+      (then
+      ref.null extern
+      )
+      (else
+      local.get 2
+      struct.get 62 3
+      ref.as_non_null
+      struct.get 61 9
+      )
+    )
+    local.tee 3
+    ref.is_null
+    (if (result externref)
+      (then
+      local.get 2
+      struct.get 62 1
+      extern.convert_any
+      call 121
+      drop
+      local.get 0
+      )
+      (else
+      local.get 2
+      struct.get 62 2
+      extern.convert_any
+      local.get 3
+      local.get 2
+      struct.get 62 1
+      extern.convert_any
       call 135
       )
     )
   )
-  (func $__proxy_create (type 64)
+  (func $__proxy_ownkeys_keys_dispatch (type 65)
+    (local $p (ref null 62))
+    (local $trap externref)
+    local.get 0
+    any.convert_extern
+    ref.cast (ref 62)
+    local.tee 2
+    struct.get 62 4
+    (if
+      (then
+      i32.const 57
+      i32.const 0
+      i32.const 67
+      i32.const 97
+      i32.const 110
+      i32.const 110
+      i32.const 111
+      i32.const 116
+      i32.const 32
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 102
+      i32.const 111
+      i32.const 114
+      i32.const 109
+      i32.const 32
+      i32.const 111
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 97
+      i32.const 116
+      i32.const 105
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 97
+      i32.const 32
+      i32.const 112
+      i32.const 114
+      i32.const 111
+      i32.const 120
+      i32.const 121
+      i32.const 32
+      i32.const 116
+      i32.const 104
+      i32.const 97
+      i32.const 116
+      i32.const 32
+      i32.const 104
+      i32.const 97
+      i32.const 115
+      i32.const 32
+      i32.const 98
+      i32.const 101
+      i32.const 101
+      i32.const 110
+      i32.const 32
+      i32.const 114
+      i32.const 101
+      i32.const 118
+      i32.const 111
+      i32.const 107
+      i32.const 101
+      i32.const 100
+      array.new_fixed 5 57
+      struct.new 7
+      extern.convert_any
+      call 54
+      throw 0
+      )
+    )
+    local.get 2
+    struct.get 62 3
+    ref.is_null
+    (if (result externref)
+      (then
+      ref.null extern
+      )
+      (else
+      local.get 2
+      struct.get 62 3
+      ref.as_non_null
+      struct.get 61 10
+      )
+    )
+    local.tee 3
+    ref.is_null
+    (if (result externref)
+      (then
+      local.get 2
+      struct.get 62 1
+      extern.convert_any
+      call 101
+      )
+      (else
+      local.get 2
+      struct.get 62 2
+      extern.convert_any
+      local.get 3
+      local.get 2
+      struct.get 62 1
+      extern.convert_any
+      call 136
+      local.tee 3
+      ref.is_null
+      local.get 3
+      call 60
+      i32.or
+      local.get 3
+      call 61
+      i32.or
+      local.get 3
+      call 63
+      i32.or
+      (if
+        (then
+        i32.const 43
+        i32.const 0
+        i32.const 80
+        i32.const 114
+        i32.const 111
+        i32.const 120
+        i32.const 121
+        i32.const 32
+        i32.const 111
+        i32.const 119
+        i32.const 110
+        i32.const 75
+        i32.const 101
+        i32.const 121
+        i32.const 115
+        i32.const 32
+        i32.const 116
+        i32.const 114
+        i32.const 97
+        i32.const 112
+        i32.const 32
+        i32.const 114
+        i32.const 101
+        i32.const 115
+        i32.const 117
+        i32.const 108
+        i32.const 116
+        i32.const 32
+        i32.const 109
+        i32.const 117
+        i32.const 115
+        i32.const 116
+        i32.const 32
+        i32.const 98
+        i32.const 101
+        i32.const 32
+        i32.const 97
+        i32.const 110
+        i32.const 32
+        i32.const 111
+        i32.const 98
+        i32.const 106
+        i32.const 101
+        i32.const 99
+        i32.const 116
+        array.new_fixed 5 43
+        struct.new 7
+        extern.convert_any
+        call 54
+        throw 0
+        )
+      )
+      local.get 3
+      )
+    )
+  )
+  (func $__proxy_ownkeys_names_dispatch (type 65)
+    (local $p (ref null 62))
+    (local $trap externref)
+    local.get 0
+    any.convert_extern
+    ref.cast (ref 62)
+    local.tee 2
+    struct.get 62 4
+    (if
+      (then
+      i32.const 57
+      i32.const 0
+      i32.const 67
+      i32.const 97
+      i32.const 110
+      i32.const 110
+      i32.const 111
+      i32.const 116
+      i32.const 32
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 102
+      i32.const 111
+      i32.const 114
+      i32.const 109
+      i32.const 32
+      i32.const 111
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 97
+      i32.const 116
+      i32.const 105
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 97
+      i32.const 32
+      i32.const 112
+      i32.const 114
+      i32.const 111
+      i32.const 120
+      i32.const 121
+      i32.const 32
+      i32.const 116
+      i32.const 104
+      i32.const 97
+      i32.const 116
+      i32.const 32
+      i32.const 104
+      i32.const 97
+      i32.const 115
+      i32.const 32
+      i32.const 98
+      i32.const 101
+      i32.const 101
+      i32.const 110
+      i32.const 32
+      i32.const 114
+      i32.const 101
+      i32.const 118
+      i32.const 111
+      i32.const 107
+      i32.const 101
+      i32.const 100
+      array.new_fixed 5 57
+      struct.new 7
+      extern.convert_any
+      call 54
+      throw 0
+      )
+    )
+    local.get 2
+    struct.get 62 3
+    ref.is_null
+    (if (result externref)
+      (then
+      ref.null extern
+      )
+      (else
+      local.get 2
+      struct.get 62 3
+      ref.as_non_null
+      struct.get 61 10
+      )
+    )
+    local.tee 3
+    ref.is_null
+    (if (result externref)
+      (then
+      local.get 2
+      struct.get 62 1
+      extern.convert_any
+      call 114
+      )
+      (else
+      local.get 2
+      struct.get 62 2
+      extern.convert_any
+      local.get 3
+      local.get 2
+      struct.get 62 1
+      extern.convert_any
+      call 136
+      local.tee 3
+      ref.is_null
+      local.get 3
+      call 60
+      i32.or
+      local.get 3
+      call 61
+      i32.or
+      local.get 3
+      call 63
+      i32.or
+      (if
+        (then
+        i32.const 43
+        i32.const 0
+        i32.const 80
+        i32.const 114
+        i32.const 111
+        i32.const 120
+        i32.const 121
+        i32.const 32
+        i32.const 111
+        i32.const 119
+        i32.const 110
+        i32.const 75
+        i32.const 101
+        i32.const 121
+        i32.const 115
+        i32.const 32
+        i32.const 116
+        i32.const 114
+        i32.const 97
+        i32.const 112
+        i32.const 32
+        i32.const 114
+        i32.const 101
+        i32.const 115
+        i32.const 117
+        i32.const 108
+        i32.const 116
+        i32.const 32
+        i32.const 109
+        i32.const 117
+        i32.const 115
+        i32.const 116
+        i32.const 32
+        i32.const 98
+        i32.const 101
+        i32.const 32
+        i32.const 97
+        i32.const 110
+        i32.const 32
+        i32.const 111
+        i32.const 98
+        i32.const 106
+        i32.const 101
+        i32.const 99
+        i32.const 116
+        array.new_fixed 5 43
+        struct.new 7
+        extern.convert_any
+        call 54
+        throw 0
+        )
+      )
+      local.get 3
+      )
+    )
+  )
+  (func $__proxy_define_dispatch (type 79)
+    (local $p (ref null 62))
+    (local $trap externref)
+    local.get 0
+    any.convert_extern
+    ref.cast (ref 62)
+    local.tee 3
+    struct.get 62 4
+    (if
+      (then
+      i32.const 57
+      i32.const 0
+      i32.const 67
+      i32.const 97
+      i32.const 110
+      i32.const 110
+      i32.const 111
+      i32.const 116
+      i32.const 32
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 102
+      i32.const 111
+      i32.const 114
+      i32.const 109
+      i32.const 32
+      i32.const 111
+      i32.const 112
+      i32.const 101
+      i32.const 114
+      i32.const 97
+      i32.const 116
+      i32.const 105
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 111
+      i32.const 110
+      i32.const 32
+      i32.const 97
+      i32.const 32
+      i32.const 112
+      i32.const 114
+      i32.const 111
+      i32.const 120
+      i32.const 121
+      i32.const 32
+      i32.const 116
+      i32.const 104
+      i32.const 97
+      i32.const 116
+      i32.const 32
+      i32.const 104
+      i32.const 97
+      i32.const 115
+      i32.const 32
+      i32.const 98
+      i32.const 101
+      i32.const 101
+      i32.const 110
+      i32.const 32
+      i32.const 114
+      i32.const 101
+      i32.const 118
+      i32.const 111
+      i32.const 107
+      i32.const 101
+      i32.const 100
+      array.new_fixed 5 57
+      struct.new 7
+      extern.convert_any
+      call 54
+      throw 0
+      )
+    )
+    local.get 3
+    struct.get 62 3
+    ref.is_null
+    (if (result externref)
+      (then
+      ref.null extern
+      )
+      (else
+      local.get 3
+      struct.get 62 3
+      ref.as_non_null
+      struct.get 61 11
+      )
+    )
+    local.tee 4
+    ref.is_null
+    (if (result externref)
+      (then
+      local.get 3
+      struct.get 62 1
+      extern.convert_any
+      local.get 1
+      local.get 2
+      call 112
+      )
+      (else
+      local.get 3
+      struct.get 62 2
+      extern.convert_any
+      local.get 4
+      local.get 3
+      struct.get 62 1
+      extern.convert_any
+      local.get 1
+      local.get 2
+      call 137
+      )
+    )
+  )
+  (func $__proxy_create (type 65)
     (local $getT externref)
     (local $setT externref)
     (local $hasT externref)
@@ -16961,7 +17969,7 @@
       array.new_fixed 5 58
       struct.new 7
       extern.convert_any
-      call 52
+      call 54
       throw 0
       )
     )
@@ -17033,7 +18041,7 @@
       array.new_fixed 5 58
       struct.new 7
       extern.convert_any
-      call 52
+      call 54
       throw 0
       )
     )
@@ -17046,7 +18054,7 @@
     array.new_fixed 5 3
     struct.new 7
     extern.convert_any
-    call 73
+    call 75
     local.set 2
     local.get 1
     i32.const 3
@@ -17057,7 +18065,7 @@
     array.new_fixed 5 3
     struct.new 7
     extern.convert_any
-    call 73
+    call 75
     local.set 3
     local.get 1
     i32.const 3
@@ -17068,7 +18076,7 @@
     array.new_fixed 5 3
     struct.new 7
     extern.convert_any
-    call 73
+    call 75
     local.set 4
     local.get 1
     i32.const 5
@@ -17081,7 +18089,7 @@
     array.new_fixed 5 5
     struct.new 7
     extern.convert_any
-    call 73
+    call 75
     local.set 5
     local.get 1
     i32.const 14
@@ -17103,7 +18111,7 @@
     array.new_fixed 5 14
     struct.new 7
     extern.convert_any
-    call 73
+    call 75
     local.set 6
     local.get 1
     i32.const 24
@@ -17135,7 +18143,7 @@
     array.new_fixed 5 24
     struct.new 7
     extern.convert_any
-    call 73
+    call 75
     local.set 7
     local.get 1
     i32.const 14
@@ -17157,7 +18165,7 @@
     array.new_fixed 5 14
     struct.new 7
     extern.convert_any
-    call 73
+    call 75
     local.set 8
     local.get 1
     i32.const 14
@@ -17179,7 +18187,7 @@
     array.new_fixed 5 14
     struct.new 7
     extern.convert_any
-    call 73
+    call 75
     local.set 9
     local.get 1
     i32.const 12
@@ -17199,7 +18207,7 @@
     array.new_fixed 5 12
     struct.new 7
     extern.convert_any
-    call 73
+    call 75
     local.set 10
     local.get 1
     i32.const 17
@@ -17224,7 +18232,7 @@
     array.new_fixed 5 17
     struct.new 7
     extern.convert_any
-    call 73
+    call 75
     local.set 11
     local.get 1
     i32.const 7
@@ -17239,7 +18247,7 @@
     array.new_fixed 5 7
     struct.new 7
     extern.convert_any
-    call 73
+    call 75
     local.set 12
     local.get 1
     i32.const 14
@@ -17261,7 +18269,7 @@
     array.new_fixed 5 14
     struct.new 7
     extern.convert_any
-    call 73
+    call 75
     local.set 13
     i32.const 1
     local.get 0
@@ -17280,61 +18288,93 @@
     local.get 11
     local.get 12
     local.get 13
-    struct.new 60
-    i32.const 0
     struct.new 61
+    i32.const 0
+    struct.new 62
     extern.convert_any
   )
-  (func $__proxy_revoke (type 43)
-    (local $p (ref null 61))
+  (func $__proxy_revoke (type 44)
+    (local $p (ref null 62))
     local.get 0
     any.convert_extern
-    ref.cast (ref 61)
+    ref.cast (ref 62)
     local.tee 1
     i32.const 1
-    struct.set 61 4
+    struct.set 62 4
     local.get 1
     ref.null extern
     any.convert_extern
-    struct.set 61 1
+    struct.set 62 1
     local.get 1
     ref.null extern
     any.convert_extern
-    struct.set 61 2
+    struct.set 62 2
     local.get 1
-    ref.null 60
-    struct.set 61 3
+    ref.null 61
+    struct.set 62 3
   )
-  (func $__module_init (type 42)
-    global.get 12
+  (func $__module_init (type 43)
+    global.get 28
     (if
       (then
       return
       )
     )
     i32.const 1
-    global.set 12
+    global.set 28
     f64.const 0
     global.set 2
     i32.const 1
-    global.set 7
+    global.set 15
     f64.const 8
     global.set 3
     i32.const 1
-    global.set 8
-    f64.const 64
+    global.set 16
+    f64.const 16
     global.set 4
     i32.const 1
-    global.set 9
-    f64.const 65536
+    global.set 17
+    f64.const 20
     global.set 5
     i32.const 1
+    global.set 18
+    f64.const 65536
+    global.set 6
+    i32.const 1
+    global.set 19
+    f64.const 65534
+    global.set 7
+    i32.const 1
+    global.set 20
+    f64.const 4096
+    global.set 8
+    i32.const 1
+    global.set 21
+    f64.const 69632
+    global.set 9
+    i32.const 1
+    global.set 22
+    f64.const 44
     global.set 10
-    call 45
+    i32.const 1
+    global.set 23
+    f64.const 91
+    global.set 11
+    i32.const 1
+    global.set 24
+    f64.const 93
+    global.set 12
+    i32.const 1
+    global.set 25
+    f64.const 34
+    global.set 13
+    i32.const 1
+    global.set 26
+    call 47
   )
-  (func $__sget_length (type 47)
+  (func $__sget_length (type 48)
     (local $__any anyref)
-    call 150
+    call 152
     local.get 0
     any.convert_extern
     local.tee 1
@@ -17383,9 +18423,9 @@
       )
     )
   )
-  (func $__sget_data (type 52)
+  (func $__sget_data (type 53)
     (local $__any anyref)
-    call 150
+    call 152
     local.get 0
     any.convert_extern
     local.tee 1
@@ -17438,9 +18478,9 @@
       )
     )
   )
-  (func $__sget_byteOffset (type 47)
+  (func $__sget_byteOffset (type 48)
     (local $__any anyref)
-    call 150
+    call 152
     local.get 0
     any.convert_extern
     local.tee 1
@@ -17491,7 +18531,7 @@
   )
   (func $__sset_length (param externref i32)
     (local $__any anyref)
-    call 150
+    call 152
     local.get 0
     any.convert_extern
     local.tee 2
@@ -17541,9 +18581,9 @@
       )
     )
   )
-  (func $__vec_len (type 47)
+  (func $__vec_len (type 48)
     (local $__any anyref)
-    call 150
+    call 152
     local.get 0
     any.convert_extern
     local.tee 1
@@ -17588,7 +18628,7 @@
   )
   (func $__vec_get (param externref i32) (result externref)
     (local $__any anyref)
-    call 150
+    call 152
     local.get 0
     any.convert_extern
     local.tee 2
@@ -17612,7 +18652,7 @@
         struct.get 4 1
         local.get 1
         array.get 3
-        call 47
+        call 49
         return
         )
         (else
@@ -17639,9 +18679,9 @@
     )
     ref.null extern
   )
-  (func $__is_vec (type 47)
+  (func $__is_vec (type 48)
     (local $__any anyref)
-    call 150
+    call 152
     local.get 0
     any.convert_extern
     local.tee 1
@@ -17678,9 +18718,9 @@
     )
     i32.const 0
   )
-  (func $__vec_mut_supported (type 47)
+  (func $__vec_mut_supported (type 48)
     (local $__any anyref)
-    call 150
+    call 152
     local.get 0
     any.convert_extern
     local.tee 1
@@ -17707,7 +18747,7 @@
     )
     i32.const 0
   )
-  (func $__vec_push (type 54)
+  (func $__vec_push (type 55)
     (local $__any anyref)
     (local $__vp_vec_4 (ref null 4))
     (local $__vp_data_4 (ref null 3))
@@ -17719,7 +18759,7 @@
     (local $__vp_len_2 i32)
     (local $__vp_ncap_2 i32)
     (local $__vp_ndata_2 (ref null 1))
-    call 150
+    call 152
     local.get 0
     any.convert_extern
     local.tee 2
@@ -17838,7 +18878,7 @@
         local.get 4
         local.get 5
         local.get 1
-        call 48
+        call 50
         array.set 3
         local.get 3
         local.get 5
@@ -17859,13 +18899,13 @@
     )
     i32.const 0
   )
-  (func $__vec_pop (type 52)
+  (func $__vec_pop (type 53)
     (local $__any anyref)
     (local $__vpop_vec_4 (ref null 4))
     (local $__vpop_len_4 i32)
     (local $__vpop_vec_2 (ref null 2))
     (local $__vpop_len_2 i32)
-    call 150
+    call 152
     local.get 0
     any.convert_extern
     local.tee 1
@@ -17920,7 +18960,7 @@
         i32.const 1
         i32.sub
         array.get 3
-        call 47
+        call 49
         local.get 2
         local.get 3
         i32.const 1
@@ -17937,21 +18977,61 @@
     )
     ref.null extern
   )
-  (func $_start (type 42)
-    call 45
+  (func $__is_data_struct (type 48)
+    (local $__any anyref)
+    call 152
+    local.get 0
+    any.convert_extern
+    local.tee 1
+    ref.test (ref 11)
+    (if
+      (then
+      i32.const 1
+      return
+      )
+    )
+    local.get 1
+    ref.test (ref 13)
+    (if
+      (then
+      i32.const 1
+      return
+      )
+    )
+    local.get 1
+    ref.test (ref 15)
+    (if
+      (then
+      i32.const 1
+      return
+      )
+    )
+    local.get 1
+    ref.test (ref 16)
+    (if
+      (then
+      i32.const 1
+      return
+      )
+    )
+    i32.const 0
+  )
+  (func $_start (type 43)
+    call 47
   )
   (export "memory" (memory 0))
-  (export "main" (func 45))
-  (export "__sget_length" (func 151))
-  (export "__sget_data" (func 152))
-  (export "__sget_byteOffset" (func 153))
-  (export "__sset_length" (func 154))
-  (export "__vec_len" (func 155))
-  (export "__vec_get" (func 156))
-  (export "__is_vec" (func 157))
-  (export "__vec_mut_supported" (func 158))
-  (export "__vec_push" (func 159))
-  (export "__vec_pop" (func 160))
-  (export "_start" (func 161))
+  (export "main" (func 47))
+  (export "__sget_length" (func 153))
+  (export "__sget_data" (func 154))
+  (export "__sget_byteOffset" (func 155))
+  (export "__sset_length" (func 156))
+  (export "__vec_len" (func 157))
+  (export "__vec_get" (func 158))
+  (export "__is_vec" (func 159))
+  (export "__vec_mut_supported" (func 160))
+  (export "__vec_push" (func 161))
+  (export "__vec_pop" (func 162))
+  (export "__is_data_struct" (func 163))
+  (export "_start" (func 164))
   (export "__exn_tag" (tag 0))
 )
